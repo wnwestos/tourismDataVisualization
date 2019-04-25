@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="charset=utf-8" />
+<title>旅游大数据可视化系统登录</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
+</head>
+<body>
+<div id="floatDiv">
+    <div id="login">
+    <div class="wrapper">
+        <div class="login">
+            <form action="" method="post" class="container offset1 loginform" id="loginform">
+				{% csrf_token %}
+                <div id="owl-login">
+                    <div class="hand"></div>
+                    <div class="hand hand-r"></div>
+                    <div class="arms">
+                        <div class="arm"></div>
+                        <div class="arm arm-r"></div>
+                    </div>
+                </div>
+                <div class="pad" id="logPad">
+                    <h3 style="text-align: center;color:olive">用户登录</h3>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="email" class="control-label  fa fa-user-o"></label>
+                            <input id="email" type="text" name="email" placeholder="lockey" value="lockey" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="password" class="control-label fa fa-key"></label>
+                            <input id="password" type="password" name="password" placeholder="Password" value="a" tabindex="2" class="form-control input-medium">
+                        </div>
+                    </div>
+                    <div class="control-group" style="display:none" id='passConfirm'>
+                        <div class="controls">
+                            <label for="password" class="control-label fa fa-key"></label>
+                            <input id="passwordConfirm" type="password" name="password" placeholder="Confirm Password" value="a" tabindex="2" class="form-control input-medium">
+                        </div>
+                    </div>
+					<h4 class="error" id="tipsDiv"></h4>
+                </div>
+                <div class="form-actions">
+				<a href="javascript:void(0)" tabindex="5" class="btn pull-left btn-link text-muted" >Forgot password?</a>
+				<a href="javascript:void(0)" tabindex="6" class="btn btn-link text-muted signupin">Sign Up</a>
+				<a href="javascript:void(0)" tabindex="6" class="btn btn-link text-muted signupin" style="display:none">Sign In</a>
+                <button type="button" tabindex="4" class="btn btn-primary logreg" id="loginBtn">Login</button>
+				<button type="button" tabindex="4" class="btn btn-primary logreg" id="regBtn" style="display:none">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+	</div>
+    <div class="language-option">
+        <span class="language-option-item ng-binding ng-scope" ng-repeat="lang in login.LANGS track by lang.type" ng-click="login.changeLng(lang.type)">简体中文</span>
+        <span class="language-option-item ng-binding ng-scope" ng-repeat="lang in login.LANGS track by lang.type" ng-click="login.changeLng(lang.type)">繁體中文</span>
+        <span class="language-option-item ng-binding ng-scope" ng-repeat="lang in login.LANGS track by lang.type" ng-click="login.changeLng(lang.type)">English</span>
+    </div>
+    <div class="networkdetect ng-binding" ng-click="login.networkdetect()">登录异常? 点此检测</div>
+</div>
+<!--登录以及一些提醒消息或者表单的悬浮层 end-->
+<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script>
+(function(){
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+	$.ajaxSetup({
+		beforeSend: function (xhr, settings) {
+			if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			}
+		}
+	});
+	$('#password').focus(function() {
+		$('#owl-login').addClass('password');
+	}).blur(function() {
+		$('#owl-login').removeClass('password');
+	});
+	$('.logreg').click(
+		function(){
+			let postdata = {}
+			var infoRe =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/
+			username = $('#email').val();
+			password = $('#password').val();
+			if(!username || !infoRe.test(username)){
+				$('#tipsDiv').html('用户名不符合规范！').show().fadeOut(5000);
+				return false;
+			}
+			if(!password || !infoRe.test(password)){
+				$('#tipsDiv').html('密码不符合规范！').show().fadeOut(5000);
+				return false;
+			}
+			if ($(this).text() == 'Register'){
+				passwordConfirm = $('#passwordConfirm').val();
+				if (passwordConfirm != password){
+					$('#tipsDiv').html('密码不一致！')
+					return false;
+				}else{
+					postdata={'type':'reg','username':username,'password':password}
+				}
+			}else{
+				postdata={'type':'login','username':username,'password':password}
+			}
+			
+			$.ajax({
+			type:"POST",
+			url: '/go/login/',
+			data: JSON.stringify(postdata),
+			dataType:'json',
+			cache:false,
+			success: function(data) {
+				if(data.code == 0){
+					window.location.href = '/'
+				}else{
+					$('#tipsDiv').html(data.err).show().fadeOut(5000);
+				}
+			},
+			error: function() {
+				$('#tipsDiv').html('网络连接失败，请重试或者联系管理员！').show().fadeOut(5000);
+			}
+            });
+		});
+	
+	$('.signupin').click(function(){
+		var text = $(this).text()
+		$(this).hide()
+		if (text == 'Sign Up'){
+			$(this).next().show()
+			$('#passConfirm').show()
+			$('#loginBtn').hide()
+			$('#regBtn').show()
+		}else{
+			$(this).prev().show()
+			$('#passConfirm').hide()
+			$('#loginBtn').show()
+			$('#regBtn').hide()
+		}
+	})
+})();
+</script>
+</body>
+</html>
