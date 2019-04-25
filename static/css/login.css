@@ -6660,13 +6660,14 @@ z-index:1;
 #login .loginform .pad,
 #register .loginform .pad {
   overflow: hidden;
-  padding: 30px;
+  padding: 50px 30px 16px 30px;
 
 }
 #login .loginform .form-actions,
 #register .loginform .form-actions {
   border-top: 1px solid #e4e4e4;
   background-color: #f7f7f7;
+  border-radius: 23px;
   padding: 15px 30px;
   text-align: right;
 }
@@ -6973,6 +6974,7 @@ z-index:1;
 }
 #login .loginform {
   margin-top: 0;
+  border-radius: 21px;
   top: 66%;
 }
 #register #signup-main,
@@ -7812,6 +7814,11 @@ pre {
 }
 h4.error,h4.ok{
 	text-align:center
+}
+h4.tips{
+  color:#b86fef;
+  font-size: 0.8em;
+  text-align: center;
 }
 .outCacel,#outYes,#groupAddYes{
 	margin:15px

@@ -24,26 +24,28 @@
                 </div>
                 <div class="pad" id="logPad">
                     <h3 style="text-align: center;color:olive">用户登录</h3>
-
+					<br/>
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label  fa fa-user-o"></label>
-                            <input id="email" type="text" name="email" placeholder="lockey" value="lockey" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="text" name="email" placeholder="Username" value="" tabindex="1" autofocus="autofocus" class="form-control input-medium">
                         </div>
-                    </div>
+					</div>
+					<br/>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-key"></label>
-                            <input id="password" type="password" name="password" placeholder="Password" value="a" tabindex="2" class="form-control input-medium">
+                            <input id="password" type="password" name="password" placeholder="Password" value="" tabindex="2" class="form-control input-medium">
                         </div>
                     </div>
                     <div class="control-group" style="display:none" id='passConfirm'>
                         <div class="controls">
                             <label for="password" class="control-label fa fa-key"></label>
-                            <input id="passwordConfirm" type="password" name="password" placeholder="Confirm Password" value="a" tabindex="2" class="form-control input-medium">
+                            <input id="passwordConfirm" type="password" name="password" placeholder="Confirm Password" value="" tabindex="2" class="form-control input-medium">
                         </div>
-                    </div>
-					<h4 class="error" id="tipsDiv"></h4>
+					</div>
+					<h4 class="tips">用户名和密码必须为数字和大小写字母组合且大于6位</h4>
+					<h5 class="error" id="tipsDiv" align="center"></h5>
                 </div>
                 <div class="form-actions">
 				<a href="javascript:void(0)" tabindex="5" class="btn pull-left btn-link text-muted" >Forgot password?</a>
@@ -66,85 +68,90 @@
 <!--登录以及一些提醒消息或者表单的悬浮层 end-->
 <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <script>
-(function(){
-	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-    function csrfSafeMethod(method) {
-        // these HTTP methods do not require CSRF protection
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-	$.ajaxSetup({
-		beforeSend: function (xhr, settings) {
-			if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
-			}
+	window.addEventListener("keydown", function(event) {
+	if(event.keyCode == 13){
+		$('#loginBtn').trigger('click')
+	}
+	}, false);
+	(function(){
+		var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+		function csrfSafeMethod(method) {
+			// these HTTP methods do not require CSRF protection
+			return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 		}
-	});
-	$('#password').focus(function() {
-		$('#owl-login').addClass('password');
-	}).blur(function() {
-		$('#owl-login').removeClass('password');
-	});
-	$('.logreg').click(
-		function(){
-			let postdata = {}
-			var infoRe =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/
-			username = $('#email').val();
-			password = $('#password').val();
-			if(!username || !infoRe.test(username)){
-				$('#tipsDiv').html('用户名不符合规范！').show().fadeOut(5000);
-				return false;
-			}
-			if(!password || !infoRe.test(password)){
-				$('#tipsDiv').html('密码不符合规范！').show().fadeOut(5000);
-				return false;
-			}
-			if ($(this).text() == 'Register'){
-				passwordConfirm = $('#passwordConfirm').val();
-				if (passwordConfirm != password){
-					$('#tipsDiv').html('密码不一致！')
-					return false;
-				}else{
-					postdata={'type':'reg','username':username,'password':password}
+		$.ajaxSetup({
+			beforeSend: function (xhr, settings) {
+				if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+					xhr.setRequestHeader("X-CSRFToken", csrftoken);
 				}
-			}else{
-				postdata={'type':'login','username':username,'password':password}
 			}
-			
-			$.ajax({
-			type:"POST",
-			url: '/go/login/',
-			data: JSON.stringify(postdata),
-			dataType:'json',
-			cache:false,
-			success: function(data) {
-				if(data.code == 0){
-					window.location.href = '/'
-				}else{
-					$('#tipsDiv').html(data.err).show().fadeOut(5000);
-				}
-			},
-			error: function() {
-				$('#tipsDiv').html('网络连接失败，请重试或者联系管理员！').show().fadeOut(5000);
-			}
-            });
 		});
-	
-	$('.signupin').click(function(){
-		var text = $(this).text()
-		$(this).hide()
-		if (text == 'Sign Up'){
-			$(this).next().show()
-			$('#passConfirm').show()
-			$('#loginBtn').hide()
-			$('#regBtn').show()
-		}else{
-			$(this).prev().show()
-			$('#passConfirm').hide()
-			$('#loginBtn').show()
-			$('#regBtn').hide()
-		}
-	})
-})();
+		$('#password').focus(function() {
+			$('#owl-login').addClass('password');
+		}).blur(function() {
+			$('#owl-login').removeClass('password');
+		});
+		$('.logreg').click(
+			function(){
+				let postdata = {}
+				var infoRe =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/
+				username = $('#email').val();
+				password = $('#password').val();
+				if(!username || !infoRe.test(username)){
+					$('#tipsDiv').html('用户名不符合规范！').show().fadeOut(5000);
+					return false;
+				}
+				if(!password || !infoRe.test(password)){
+					$('#tipsDiv').html('密码不符合规范！').show().fadeOut(5000);
+					return false;
+				}
+				if ($(this).text() == 'Register'){
+					passwordConfirm = $('#passwordConfirm').val();
+					if (passwordConfirm != password){
+						$('#tipsDiv').html('密码不一致！')
+						return false;
+					}else{
+						postdata={'type':'reg','username':username,'password':password}
+					}
+				}else{
+					postdata={'type':'login','username':username,'password':password}
+				}
+				
+				$.ajax({
+				type:"POST",
+				url: '/go/login/',
+				data: JSON.stringify(postdata),
+				dataType:'json',
+				cache:false,
+				success: function(data) {
+					if(data.code == 0){
+						window.location.href = '/'
+					}else{
+						$('#tipsDiv').html(data.err).show().fadeOut(5000);
+					}
+				},
+				error: function() {
+					$('#tipsDiv').html('网络连接失败，请重试或者联系管理员！').show().fadeOut(5000);
+				}
+				});
+			});
+		
+		$('.signupin').click(function(){
+			var text = $(this).text()
+			$(this).hide()
+			if (text == 'Sign Up'){
+				$(this).next().show()
+				$('#passConfirm').show()
+				$('#loginBtn').hide()
+				$('#regBtn').show()
+			}else{
+				$(this).prev().show()
+				$('#passConfirm').hide()
+				$('#loginBtn').show()
+				$('#regBtn').hide()
+			}
+		})
+	})();
 </script>
 </body>
 </html>

@@ -38,9 +38,11 @@ class LoginView(View):
             )
             try:
                 new_user.save()
+                request.session['username'] = username
+                request.session.set_expiry(9000)
             except Exception as err:
-                return JsonResponse({'code': '-1', 'message': 'Failed to add user.' + str(err)})
-            return JsonResponse({'code': '0', 'message': 'New user added!'})
+                return JsonResponse({'code': -1, 'message': 'Failed to add user.' + str(err)})
+            return JsonResponse({'code': 0, 'message': 'New user added!'})
         else:
             user = User.objects.get(pk=username) if User.objects.filter(pk=username).exists() else None
             if user is not None and user.verify_password(password):
