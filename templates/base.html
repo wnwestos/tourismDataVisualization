@@ -5,39 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>旅游大数据可视化系统-Tourism Data Visualization</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/pure-min.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/grids-responsive-min.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}"/>
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    {% block stylesheet %}
+        <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    {% endblock %}
+    {% block scriptblock %}
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+    {% endblock %}
 </head>
-<body>
-<div id="layout" class="pure-g">
-    <!--左侧边栏 开始-->
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="header">
-            <h1 class="brand-title"><a href="{% url 'home' %}" style="text-decoration: none">金笔头博客</a></h1>
-            <br>
-            <h2 class="brand-tagline">Love Learning, Love Sharing...</h2>
-            
-        </div>
-    </div>
-    <!--左侧边栏 结束-->
-    <!--文章列表 开始-->
-    <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-            {% block content %}
-            {% endblock %}
-        </div>
-    </div>
-    <!--文章列表 结束-->
-</div>
-<div class="go-top">
-    <div class="arrow"></div>
-    <div class="stick"></div>
-</div>
-<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script>
-   console.log(111)
-</script>
-</body>
+<body class="home-template">
+        <nav class="main-nav navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-links"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img alt="Siri" style="height: 25px" src="{% static 'images/logo_siri.png' %}">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-nav-links" style="margin-left: 200px">
+                    <ul class="nav navbar-nav">
+                        <li class="but-link" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Alert</a>
+                        </li>
+                        <li class="but-link" class="dropdown">
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">Job Library</a>
+                        </li>
+        
+                        <li class="but-link" class="dropdown">
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">TM Portal</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="but-link">
+                            <a href="#"  role="button" aria-haspopup="true" aria-expanded="false">Help</a>
+                        </li>
+                        <li class="but-link" >
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- Page Contents -->
+        {% block content %}
+        {% endblock %}
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="widget">
+                            <h4 class="title">About</h4>
+                            <div class="content recent-post">
+                                <div class="recent-single-post">
+                                    <a href="mailto:wenjguo@paypal.com;junldai@paypal.com" class="post-title"> Contact Us</a>
+                                    <div class="date"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-4">
+                        <div class="widget">
+                            <h4 class="title">Other Services</h4>
+                            <div class="content tag-cloud">
+                                <a href="http://go/bi" target="_blank">BI Portal</a>
+                                <a href="http://go/lossy" target="_blank">Loss Triangle</a>
+                                <a href="http://go/alert" target="_blank">Loss Alert</a>
+                                <a href="http://go/s" target="_blank">Score Card</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </footer>
+        {% block footerscript %}
+            <script>
+               console.log(11111)
+            </script>
+        {% endblock %}
+        
+        </body>
 </html>

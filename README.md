@@ -1,6 +1,4 @@
-近一段时间一直在学习运维相关的知识，并且开始接触自动化运维理念，对于很多运维工具都有自己的管理界面，但是这样分开的管理未免有点麻烦，于是自己就想着参考一下众家的成果来搭建一个可以管理多个运维工具的在线管理平台，计划是首先集成SaltStack、Cobbler，后续再继续整合其他的运维工具，第一版代码已经放到[github](https://github.com/LockeyCheng/oms-iooi)，参考了开源的一些个人项目，目前算是搭起来一个框架，欢迎感兴趣的同学们可以参与进来一起搞事情。
-
-本管理平台的最终架构如下图：
+系统架构图：
 ![这里写图片描述](http://img.blog.csdn.net/20171022074849184?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG9ja2V5MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 **实验环境：**
@@ -8,36 +6,18 @@
 	OS: Redhat 7.2 x86_64bit
 	
 	需要安装的软件或者模块：
-	Django 1.11.6、Python 2.7.5
-	Saltstack
-	Salt API
+	Python 3.6+
+    >>> django.VERSION
+    (2, 2, 0, 'final', 0)
 	MariaDB、MySQL-python模块
 	Nginx、uwsgi
 
-
-
-	
-Saltstack安装使用请参阅[自动化运维工具 Saltstack安装配置](http://blog.csdn.net/lockey23/article/details/78221454)
-Salt API安装使用请参阅[ 自动化运维工具Saltstack学习笔记](http://blog.csdn.net/lockey23/article/details/78273506)
 MariaDB安装使用请参阅[ MariaDB数据库的安装配置及常用操作](http://blog.csdn.net/lockey23/article/details/77103388)
 nginx的编译安装以及基本配置请参阅[Nginx配置解读，虚拟主机，https配置，反向代理，https重定向](http://blog.csdn.net/Lockey23/article/details/77985470)
 
 ### 1、搭建Django开发环境（pip安装）
 
-**首先安装pip**，本人分享的[百度盘压缩包地址](https://pan.baidu.com/s/1eSLBgDO)
-
-	# tar -xzvf pip-1.5.4.tar.gz
-	# cd pip-1.5.4
-	# python setup.py install
- 
- **安装Django**
- 
-	pip install django
-![这里写图片描述](http://img.blog.csdn.net/20171022000410409?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG9ja2V5MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
-**测试Django是否安装成功：**
-![这里写图片描述](http://img.blog.csdn.net/20171022000352896?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG9ja2V5MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
+基本环境的安装请参照[一键安装python3.5->virtualenv->django开发环境](https://blog.csdn.net/Lockey23/article/details/78384193)
 
 **对于Python（记得安装MySQL-python模块）操作数据库以下测试通过才算OK：**
 
