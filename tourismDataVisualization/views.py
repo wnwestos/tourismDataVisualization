@@ -7,4 +7,4 @@ from django.utils.decorators import method_decorator
 class IndexView(View):
     @method_decorator(login_required)
     def get(self, request):
-        return render(request, 'home.html')
+        return render(request, 'index.html')
