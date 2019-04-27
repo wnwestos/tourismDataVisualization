@@ -32,14 +32,13 @@
                 <div class="collapse navbar-collapse" id="main-nav-links" style="margin-left: 100px">
                     <ul class="nav navbar-nav">
                         <li class="but-link">
-                            <a href="#" class="fa fa-free-code-camp" data-toggle="dropdown" role="button"> 主页</a>
+                            <a href="/" class="fa fa-home" role="button"> Home</a>
                         </li>
                         <li class="but-link">
-                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">Job Library</a>
+                            <a href="/track/" class="fa fa-shekel" role="button" aria-haspopup="true"> Track</a>
                         </li>
-        
                         <li class="but-link">
-                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">TM Portal</a>
+                            <a href="/characteristic/" class="fa fa-cubes" role="button" aria-haspopup="true"> Characteristic</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -48,8 +47,8 @@
                                 <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
                             </a>
                             <ul class="dropdown-menu" id="userDropList"  style="min-width: 100px;">
-                                <li><a href="#setting" class="fa fa-cogs">设置</a></li>
-                                <li><a href="{% url 'login' %}" class="fa fa-power-off">退出</a></li>
+                                    <li><a href="#setting"> Setting</a></li>
+                                    <li><a href="{% url 'login' %}"> Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -492,7 +491,7 @@
 
             option = {
                 title: {
-                    text: thisYear + '年全国旅游大数据热图',
+                    text: thisYear + '年全国旅游大数据热点图',
                     left: 'center'
                 },
                 tooltip : {
@@ -613,7 +612,7 @@
                             formatter: function(params){
                                 let str = '<p align="center">[ '+params['name']+' ]</p>'
                                 str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>热度指数: '+params['value'][2]+'</p>'
+                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
                                 return str
                             }
                         },
@@ -646,7 +645,7 @@
                             formatter: function(params){
                                 let str = '<p align="center">[ '+params['name']+' ]</p>'
                                 str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>热度指数: '+params['value'][2]+'</p>'
+                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
                                 return str
                             }
                         },
@@ -686,7 +685,7 @@
                 }
                 var option = myChart.getOption();
                 option.title =  {
-                    text: thisYear + '年全国旅游大数据热图',
+                    text: thisYear + '年全国旅游大数据热点图',
                     left: 'center'
                 }
                 option.series =  [
@@ -700,7 +699,7 @@
                             formatter: function(params){
                                 let str = '<p align="center">[ '+params['name']+' ]</p>'
                                 str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>热度指数: '+params['value'][2]+'</p>'
+                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
                                 return str
                             }
                         },
@@ -733,7 +732,7 @@
                             formatter: function(params){
                                 let str = '<p align="center">[ '+params['name']+' ]</p>'
                                 str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>热度指数: '+params['value'][2]+'</p>'
+                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
                                 return str
                             }
                         },
@@ -765,28 +764,28 @@
                 myChart.setOption(option);    
             }
             $(document).ready(function(){
-                        $('#zoomer').prev('div').hide()
-                        setTimeout(function(){$('#zoomer').next().hide()},2000)
-                        $('#tourismYear').change(function(){
-                            let val = $('#tourismYear').val()
-                            thisYear = val
-                            let url = '/static/config/heatPoint'+val+'.json'
-                            $.ajax({
-                                type:"GET",
-                                url: url,
-                                data: null,
-                                dataType:'json',
-                                cache:false,
-                                success: function(ret) {
-                                    data = ret
-                                    refreshData(data)
-                                },
-                                error: function(ret) {
-                                    console.log(ret)
-                                }
-                        })
-                    })
+                $('#zoomer').prev('div').hide()
+                setTimeout(function(){$('#zoomer').next().hide()},2000)
+                $('#tourismYear').change(function(){
+                    let val = $('#tourismYear').val()
+                    thisYear = val
+                    let url = '/static/config/heatPoint'+val+'.json'
+                    $.ajax({
+                        type:"GET",
+                        url: url,
+                        data: null,
+                        dataType:'json',
+                        cache:false,
+                        success: function(ret) {
+                            data = ret
+                            refreshData(data)
+                        },
+                        error: function(ret) {
+                            console.log(ret)
+                        }
                 })
+            })
+            })
     </script>
    </body>
 </html>

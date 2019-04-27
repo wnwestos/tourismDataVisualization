@@ -8,3 +8,18 @@ class IndexView(View):
     @method_decorator(login_required)
     def get(self, request):
         return render(request, 'home.html')
+
+class TrackView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'hangzhou-track.html')
+
+class HeatMapView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'heatandmap.html')
+
+class CharacteristicView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'characteristic.html')

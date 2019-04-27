@@ -19,5 +19,8 @@ from . import views
 urlpatterns = [
     path('', views.IndexView.as_view(), name='home'),
     path('home/', views.IndexView.as_view(), name='home'),
+    path('track/', views.TrackView.as_view(), name='track'),
+    path('heatmap/',views.HeatMapView.as_view(), name='heatmap'),
+    path('characteristic/',views.CharacteristicView.as_view(), name='characteristic'),
     path('go/', include('base.urls')),
 ]
