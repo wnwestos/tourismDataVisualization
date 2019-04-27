@@ -116,7 +116,7 @@
 				}else{
 					postdata={'type':'login','username':username,'password':password}
 				}
-				
+				$('#tipsDiv').html('正在连接服务器等待验证...').show().fadeOut(5000);
 				$.ajax({
 				type:"POST",
 				url: '/go/login/',
@@ -125,7 +125,7 @@
 				cache:false,
 				success: function(data) {
 					if(data.code == 0){
-						window.location.href = '/'
+						setTimeout(function(){window.location.href = '/'},3000)
 					}else{
 						$('#tipsDiv').html(data.err).show().fadeOut(5000);
 					}

@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<!--
+        /((((((\\\\
+=======((((((((((\\\\\
+     ((           \\\\\\\
+     ( (*    _/      \\\\\\\
+       \    /  \      \\\\\\________________
+        |  |   |       </                  ((\\\\
+        o_|   /        /                      \ \\\\    \\\\\\\
+             |  ._    (                        \ \\\\\\\\\\\\\\\\
+             | /                       /       /    \\\\\\\     \\
+     .______/\/     /                 /       /         \\\
+    / __.____/    _/         ________(       /\
+   / / / ________/`---------'         \     /  \_
+  / /  \ \                             \   \ \_  \
+ ( <    \ \                             >  /    \ \
+  \/     \\_                           / /       > )
+          \_|                         / /       / /
+                                    _//       _//
+                                   /_|       /_|
+-->
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>I 乐读</title>
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="../images/favicon.ico">
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <style>
+
+  </style>
+	<div class="page-wrapper">
+            <nav id="sidebar" class="sidebar-wrapper">
+              <div class="sidebar-content">
+                <a href="javascript:void(0)" id="toggle-sidebar"><i class="fa fa-github"></i></a>
+                <div class="sidebar-brand">
+                    <a href="#" class="usernameHold">Lockey Young</a>
+                </div>
+                <div>    
+                  <input type="text" id="mymotto" placeholder="Add your motto here" class="nooutline">
+                </div>
+                <div class="sidebar-header">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="./imgs/avatar.png" alt="">
+                    </div>
+                    <div class="user-info">
+                        <!--<span class="user-name">Lockey <strong>Young</strong></span>-->
+                        
+                        <div class="user-status">                       
+                            <a href="#"><span class="label label-success" id="level">LV X</span></a>                           
+                        </div>
+                        <span class="user-role">Member</span>
+                    </div>
+                </div><!-- sidebar-header  -->
+                <div class="sidebar-search">
+                    <div>                   
+                        <div class="input-group">                          
+                            <input type="text" class="form-control search-menu" placeholder="Search for...">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>                    
+                </div><!-- sidebar-search  -->
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="header-menu"><span>My Zone</span></li>
+                        <li class="sidebar-dropdown">
+                            <a  href="#" ><i class="fa fa-arrow-circle-o-up"></i><span>My Posts</span><span class="label label-danger">New</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#">post 1 <span class="label label-success">10</span></a> </li>
+                                    <li><a href="#">post 2</a></li>
+                                    <li><a href="#">post 3</a></li>
+                                    <li><a href="#">post 4</a></li>
+                                </ul>
+                            </div>
+                        </li>                  
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-eye"></i><span>My Views</span><span class="badge paperNos">3</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#">view 1 <span class="badge">2</span></a></li>
+                                    <li><a href="#">view 2</a></li>
+                                    <li><a href="#">view 3</a></li>
+                                    <li><a href="#">view 4</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-bank"></i><span>My Classes</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#">class 1</a></li>
+                                    <li><a href="#">class 2</a></li>
+                                    <li><a href="#">class 3</a></li>
+                                    <li><a href="#">class 4</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-video-camera"></i><span>My Lives</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#">live 1</a></li>
+                                    <li><a href="#">live 2</a></li>
+                                    <li><a href="#">live 3</a></li>
+                                    <li><a href="#">live 4</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu"><span>My Relation</span></li>
+                        <li><a href="#"><i class="fa fa-foursquare"></i><span>Fans</span><span class="badge">96</span></a></li>                   
+                        <li><a href="#"><i class="fa fa-tripadvisor"></i><span>Follows</span><span class="badge">69</span></a></li>
+                        <li><a href="#"><i class="fa fa-user-plus"></i><span>Friends</span><span class="badge">68</span></a></li>
+                        <li><a href="#"><i class="fa fa-group"></i><span>Groups</span><span class="badge">12</span></a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-group"></i><span>My Poster</span><span class="badge"><span class="fa fa-minus-circle carousel-add-minus"></span><span id="carouselNo">1</span><span class="fa fa-plus-circle carousel-add-minus"></span></span></a></li>
+                    </ul>
+                   </div><!-- sidebar-menu  -->            
+                </div><!-- sidebar-content  -->
+        
+                <div class="sidebar-footer">
+                    <a href="#"><i class="fa fa-bell"></i><span class="label label-warning notification">3</span></a>
+                    <a href="#"><i class="fa fa-envelope"></i><span class="label label-success notification">7</span></a>
+                    <a href="#"><i class="fa fa-gear"></i></a>
+                    <a href="#"><i class="fa fa-power-off"></i></a>
+                </div>
+            </nav><!-- sidebar-wrapper  -->
+            <main class="page-content">
+              <!-- <h3 id="slideImgAdd"><span class="fa fa-modx"></span></h3> -->
+              <div id="myCarousel" class="carousel slide">
+                <!-- <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>   
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="https://cn.bing.com/az/hprichbg/rb/MorondavaBaobab_ZH-CN11131924506_1920x1080.jpg" alt="First slide">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="https://cn.bing.com/az/hprichbg/rb/UrbanLight_ZH-CN6248743710_1920x1080.jpg" alt="Second slide">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="https://www.bing.com/az/hprichbg/rb/MoriBuilding_ZH-CN5143587469_1920x1080.jpg" alt="Third slide">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
+            </div>
+            
+<div class="container">
+  <h3 class="rightO hidea webTitle">爱乐读</h3>
+  <div id="carouselChoose">
+      <p class="hidea rightO"><span class="fa fa-minus-circle carousel-add-minus"></span><span id="carouselNo">1</span><span class="fa fa-plus-circle carousel-add-minus"></span></p>
+  </div>
+  <ul class="nav nav-tabs" id="swith-nav-a" role="tablist"><!--style="margin-left: 16px;margin-top: -12px;"-->
+    <li class="nav-item active">
+      <a class="nav-link active fa fa-podcast" data-toggle="tab" href="#home"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fa fa-wpforms" data-toggle="tab" href="#paper-section"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fa fa-video-camera" data-toggle="tab" href="#menu2"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fa fa-music" data-toggle="tab" href="#menu3"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fa fa-search-plus" data-toggle="tab" href="#menu4"></a>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active">
+      <div id="block-div"></div>
+      <div id="more-block">
+        <h3 class="rightO"><span class="fa fa-braille"><span class="fa fa-angle-double-down"></span></span></h3>
+        <p class="hidea"><span class="fa fa-remove"> The Economist</span></p>
+      </div>
+    </div>
+    <div id="paper-section" class="container tab-pane fade"><br>
+      <div id="toughWords-div" class="touchAvoid" style="
+    display: none;
+    position: absolute;
+    left: -8px;
+    margin-top: 72px;
+    background: #fff;">
+    <ol id="wordsOl">
+    </ol>
+</div>
+    <div id="clickWordsDict" class="touchAvoid">
+      <p><a class="fa fa-remove showNone" style="
+    margin-top: 0px;
+    position: absolute;
+    right: 3px;
+    font-size: 1.6em;
+    padding: 5px 6.5px;
+    border-radius: 34px;
+    color: #ff8a6a;
+    border-left: solid 1px #14f7ff;
+    border-right: solid 1px #14f7ff;
+"></a></p>
+      <p class="wordName" align="center">altogether</p>
+          <div id="clickWordsDict_detail">
+            <p class="wordPro_p"><span class="wordTitle">发音：</span></p>
+            <p class="wordPro_p"><ul class="wordPro"></ul></p>
+            <p class="wordExplanationCN_p"><span class="wordTitle">请根据理解选择释义（点击选项名展开）：</span></p>
+            <div id="wordGuessM">
+            </div>
+<!-- 
+            
+            <p class="wordExplanationCN_p"><ul class="wordExplanationCN"></ul></p>
+             -->
+             <p class="basic_dict_error error"></p>
+          </div>
+          
+    </div>
+      <h3 class="heading3" id="mainTitle">One can not see what itself in until leave it.</h3>
+        <h5 class="heading5" id="createDate">— By Lockey</h5>
+        <h5 class="heading5" id="articleSource">— The Economist</h5>
+        <!-- <p class="pkeywords">[ Key Words ]<span id="spankeywords"></span></p> -->
+        <p class="pkeywords"><span id="spanstatistics"></span></p>
+        <!-- <p class="pkeywords"><span id="spansfocus"></span></p> -->
+        <!-- <p class="pkeywords">[ Article Content ]</p> -->
+        <!-- <h5 class="heading5" style="
+   text-align: left;
+    margin-top: 1px;
+    margin-bottom: -5px;
+    color: #914915;
+    border-bottom: solid 1px #94adff;
+" id="foucus_suggest">Article Content</h5> -->
+
+        <div id="articleContent"></div>
+
+        <img src="./imgs/zhi.jpg" style='width: 50%;margin-left: 25%;border-radius: 9%'>
+<hr/>
+        <button class="btn btn-info btn-lg btn-block" id="start-words-test">Take a Word Test</button>
+    <div id="timerDiv">
+      <div><canvas id="ballball"></canvas></div>
+      <span class="paperNos hidea">1</span>
+      <span id="runningTimer">00:00</span>
+    </div>
+        <span class="fixleft arrow"><a href="javascript:void(0)" id="lastArt" class="switchPaper"><span  class="fa fa-arrow-left"></span></a></span>
+    <span class="fixright arrow"><a href="javascript:void(0)" id="nextArt" class="switchPaper"><span  class="fa fa-arrow-right"></span></a></span>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+     <div style="text-align:center"> 
+        <div class="video-div">
+          <h5 class="video-desc">Lockey's personal page</h5>
+          <video id="video1" class="video-pre" controls>
+            <source src="../video/sources/lockey-gitio.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            您的浏览器不支持 HTML5 video 标签。
+          </video>
+        </div>
+
+        <div class="video-div">
+          <h5 class="video-desc">Wa Haaaaaaaaaaaaa</h5>
+          <video id="video1" class="video-pre" controls>
+            <source src="http://www.runoob.com/try/demo_source/mov_bbb.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            您的浏览器不支持 HTML5 video 标签。
+          </video>
+        </div>
+        <div class="video-div">
+          <h5 class="video-desc">Jordan Peterson debate on the gender pay gap, campus protests and postmodernism-Youtube</h5>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/aMcjxSThD54" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-div">
+          <h5 class="video-desc">Jordan B. Peterson on 12 Rules for Life-Youtube</h5>
+           <iframe width="100%" height="315" src="https://www.youtube.com/embed/-5RCmu-HuTg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+       
+      </div> 
+    </div>
+    <div id="menu3" class="container tab-pane fade"><br>
+      <div style="text-align:center"> 
+        <div class="video-div">
+            <h5 class="video-desc">HYDRA (《OVERLORDⅡ》TV动画片尾曲) - MYTH & ROID</h5>
+           <audio controls>
+            <source src="../music/HYDRA.mp3" type="audio/ogg">
+            <source src="../music/HYDRA.mp3" type="audio/mpeg">
+          您的浏览器不支持 audio 元素。
+          </audio>
+        </div>
+        <div class="video-div">
+            <h5 class="video-desc">again (アニメ Version) - YUI</h5>
+           <audio controls>
+            <source src="../music/again.mp3" type="audio/ogg">
+            <source src="../music/again.mp3" type="audio/mpeg">
+          您的浏览器不支持 audio 元素。
+          </audio>
+        </div>
+        <div class="video-div">
+            <h5 class="video-desc">The Economist Talk 1</h5>
+           <audio controls>
+            <source src="./The_Economist/etalk/talk1.mp3" type="audio/ogg">
+            <source src="./The_Economist/etalk/talk1.mp3" type="audio/mpeg">
+          您的浏览器不支持 audio 元素。
+          </audio>
+        </div>
+        <div class="video-div">
+            <h5 class="video-desc">The Economist Talk 2</h5>
+           <audio controls>
+            <source src="./The_Economist/etalk/talk2.mp3" type="audio/ogg">
+            <source src="./The_Economist/etalk/talk2.mp3" type="audio/mpeg">
+          您的浏览器不支持 audio 元素。
+          </audio>
+        </div>
+        <div class="video-div">
+            <h5 class="video-desc">The Economist Talk 3</h5>
+           <audio controls>
+            <source src="./The_Economist/etalk/talk3.mp3" type="audio/ogg">
+            <source src="./The_Economist/etalk/talk3.mp3" type="audio/mpeg">
+          您的浏览器不支持 audio 元素。
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div id="menu4" class="container tab-pane fade"><br>
+     <p id="dict-input-warpp">
+        
+        <input type="text" id="lookup-dict-input" placeholder="Type word to look up" class="nooutline">
+        <span class="fa fa-google" id="search-word-go" for="lookup-dict-input">o</span>
+      </p>
+      <div class="searchResult">
+        <div>
+            <p class="wordName" align="center">deploy</p>
+            <p class="wordPro_p"><span class="wordTitle">发音：</span></p>
+            <p class="wordPro_p"><ul class="wordPro">
+              <li><span class="wordTitle">英 </span>[dɪ'plɔɪ]<span class="fa fa-volume-up wordsVoice"></span></li><li><span class="wordTitle">美 </span>[dɪ'plɔɪ]<span class="fa fa-volume-up wordsVoice"></span></li>
+            </ul></p>
+
+            <p class="wordExplanationCN_p"><span class="wordTitle">释义：</span></p>
+            <p class="wordExplanationCN_p">
+                <ul class="wordExplanationCN"></ul>
+            </p>
+
+            <p class="wordPhrases_p"><span class="wordTitle">短语：</span></p>
+            <p class="wordPhrases_p"><ul class="wordPhrases"></ul></p>
+            <!-- <p><span class="wordTitle">释义（英）：</span><span class="wordExplanationEG"></span></p> -->
+            <!-- <p><span class="wordTitle">变形：</span><span class="wordRelations"></span></p>
+            <p><span class="wordTitle">近义：</span><span class="similar"></span></p>
+            <p><span class="wordTitle">反义：</span><span class="reverse"></span></p> -->
+            <div id="centences"></div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+</main><!-- page-content" -->
+
+ <footer>
+    <div class="bottom-footer">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+
+              <li><a href="https://blog.csdn.net/lockey23" target="_blank"><i class="fa fa-edit ibold"></i></a></li>
+             <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
+             <li><a href="https://www.facebook.com/chen.yang.98031506"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="https://github.com/LockeyCheng" target="_blank"><i class="fa fa-github"></i></a></li>
+             <li><a href="https://lockeycheng.github.io" target="_blank"><i class="fa fa-github-alt"></i></a></li>     
+             <li><a href="mailto:lockey23i@gmail.com"><i class="fa fa-google-plus"></i></a></li>
+
+
+
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <p><span>Copyright <i class="fa fa-copyright"></i> for ever and ever. All rights reserved by<a target="_blank" href="https://lockeycheng.github.io"> Lockey23</a></p>
+          </div>
+          <!-- <div class="col-md-4">
+            <p>All supported by <a href="mailto:iooiooi23@163.com;lockey23i@gmail.com">@Lockey23</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+</div><!-- page-wrapper -->
+
+<div id="floatDiv" class="overlap">
+  <div>
+    <h5 align="right"  id="closeFloat"><i class="fa fa-quora" alt="close" style="font-size:1.6em;margin-right: 13px;margin-top:-5px;color:#08d6c5">t</i>
+    </h5>
+  </div>
+  <div id="loadtips">
+    <div id="loadingImg">
+      <div id="fa-5" class="fa-loading-fa"><i class="fa fa-github"></i></div>
+      <div id="fa-4" class="fa-loading-fa"><i class="fa fa-firefox"></i></div>
+      <div id="fa-2" class="fa-loading-fa"><i class="fa fa-free-code-camp"></i></div>
+      <div id="fa-x" class="fa-loading-fa"><i class="fa fa-chrome"></i></div>
+      <div id="fa-1" class="fa-loading-fa"><i class="fa fa-github-alt"></i></div>
+      <div id="fa-3" class="fa-loading-fa"><i class="fa fa-twitter"></i></div>
+      <div id="fa-6" class="fa-loading-fa"><i class="fa fa-google-plus"></i></div>
+    </div>
+      <!-- <img src="http://dribbble.s3.amazonaws.com/users/121337/screenshots/1024835/loading2.gif"> -->
+    <h5 align="center" id="successIcon" style="margin-top: -10%;display: none;font-size:4em;color:#5cdc61"><i class="fa fa-check-circle"></i></h5>
+    <h5 align="center" id="normalTips_free-code-camp" style="margin-top: -10%;display: none;font-size:4em;color:#13da13"><i class="fa fa-free-code-camp"></i></h5>
+    <h5 align="center" id="wariningIcon" class="warning" style="margin-top: -10%;display: none;font-size:4em;color:#ffa500"><i class="fa fa-warning"></i></h5>
+    <h3 align="center" id="loadWords"></h3></div>
+</div>
+<a href="#myCarousel" class="fa fa-arrow-circle-up"></a>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 20%;">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+	<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src='assets/js/jquery.mCustomScrollbar.concat.min.js'></script>
+  <script type="text/javascript" src="../js/showdown.min.js"></script>
+  <script>
+    var test = null
+    var mottoArr = [
+          {'en':"I am not afraid of tomorrow for I have seen yesterday and I love today.",'auth':"— William Allen White",'cn':'不畏惧明天只因我已见过昨天并且热爱今天。'},
+          {'en':"Other men live to eat, while I eat to live. ",'auth':"— Socrates",'cn':"别人为食而生存，我为生存而食。"},
+          {'en':"Easy come, easy go. ",'auth':"— Hazlitt",'cn':"易得者亦易失。"},
+          {'en':"The darkest hour is that before the dawn. ",'auth':"— Fuller",'cn':"黎明前的时分是最黑暗的。"},
+          {'en':"Cowards die many times before their deaths. ",'auth':"— Julius Caesar",'cn':"懦夫在未死之前，已身历多次死亡的恐怖了。"},
+          {'en':"Truth is beautiful. Withoutdoubt; and so are lies.",'auth':"—Emerson.",'cn':"真理是美的；毫无疑问，谎言也是如此。"},
+          {'en':"One can not see what itself in until leave it.",'auth':"—Lockey.",'cn':"不识庐山真面目，只缘身在此山中。"},
+          {'en':'Courage isn’t having the strength to go on, it’s going on when you exhausted.','auth':"– Napoleon Bonaparte.",'cn':"勇气就是坚持到精疲力竭。"},
+          {'en':'The crisis of today is the joke of tomorrow.','auth':'– H. G. Wells','cn':'今天的危机会是明天的趣事。'},
+          {'en':'Talent without working hard is nothing.','auth':'– Cristiano Ronaldo','cn':'没有努力，再好的天分也无济于事。'},
+          {'en':'You can avoid reality, but you cannot avoid the consequences of avoiding reality.','auth':'– Ayn Rand, Novelist','cn':''}//你可以逃避现实，但你不能逃避因逃避现实所产生的后果。
+        ]
+    var wordsTest = {'right':[],'wrong':[]}
+    var noTomonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    var readTimer = null
+    var supposeTime = null
+    var today = new Date()
+    var currentPaperFile = null
+    var year = today.getFullYear()
+    var month = today.getMonth()+1
+    var day = today.getDate()
+    var timeSplit = Date().split(" ")
+    var hms = timeSplit[4]
+    var hourNow = hms.slice(0,2)
+    if(hourNow>=6 && hourNow<=11){
+        var greeting = 'Good Morning!'
+    }else if(hourNow>11 && hourNow<=15){
+        var greeting = 'Good Midday!'
+    }else if(hourNow>15 && hourNow<=19){
+        var greeting = 'Good Afternoon!'
+    }else if(hourNow>19 && hourNow<=23){
+        var greeting = 'Good Night!'
+    }else{
+        var greeting = 'Nice Dream!'
+    }
+    if(!localStorage.carousel){
+      localStorage.carousel = 1
+    }
+    if(!localStorage.myblock){
+      localStorage.myblock = 'economist'
+    }
+    $('#carouselNo').text(localStorage.carousel)
+    if(!localStorage.lastReadTime){
+      localStorage.lastReadTime = today
+    }
+    if(!localStorage.reads){
+        localStorage.reads = ''
+    }
+    if(!localStorage.username){
+      localStorage.username = 'Newcomer'
+    }
+    var nameis = localStorage.username
+    var extrainfo = '.'
+    if(localStorage.username=='王宁'){
+        nameis = nameis.slice(1,2)
+        extrainfo = '. Please post the screen shot to me for check!'
+    }
+    greeting = greeting.slice(0,-1)+', <input type="text" id="userName" placeholder="Add your name" class="usernameHoldInput short-center" value="'+nameis+'">'+extrainfo
+    if(!localStorage.views){
+      localStorage.views = 0
+    }
+    if(!localStorage.mymotto){
+      localStorage.mymotto = 'No Pains, No Gains!'
+    }
+    var myLevel = 'LV  '
+    if(localStorage.username){
+      $('.usernameHold').html(localStorage.username)
+      }
+      var paperWithTime = localStorage.views+'th('+localStorage.lastReadTime+')'
+      if(localStorage.views == 0){
+          var aaaa = 'Welcome here, wish you a jolly journey!'
+          myLevel += '0'
+      }else if(localStorage.views>0 && localStorage.views<=6){
+          var aaaa = 'It is the ' +paperWithTime+' paper you read here, keep on!'
+          myLevel += '1'
+      }else if(localStorage.views>6 && localStorage.views<=23){
+          var aaaa = 'Wonderfull! You have completed ' +paperWithTime+' papers here, just carry on!'
+          myLevel += '2'
+      }else if(localStorage.views>23 && localStorage.views<=55){
+          var aaaa = 'AMAZING! You has come to the ' +paperWithTime+' paper!'
+          myLevel += '3'
+      }else{
+          var aaaa = 'Splendiferous! You has come to the ' +paperWithTime+' paper, merely nobody ahead of you!'
+          myLevel += Math.round(localStorage.views/15)
+      }
+      $('#level').html(myLevel)
+      $('.paperNos').html(localStorage.views)
+      aaaa += '</p><p class="viewsGreeting">May you save the QR code then share it to your buddies for reading in pairs.'
+      var fillWelcome = '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button><h6 class="modal-title rightO" id="myModalLabel">'+greeting+'</h6><div class="margintop23"><p class="viewsGreeting">'+aaaa+'</p></div></div><div class="modal-body"><img id="appimg" src="./imgs/economist_index.png"></div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Got it</button></div>'
+      $('#myModal .modal-content').html(fillWelcome)
+      $('#mymotto').val(localStorage.mymotto)
+    $(document).ready(function(){
+      var morePaperLink = 'latestPapers'
+      var defaultBlock = 'The_Economist'
+      var moreTimes = 0
+      var paperOload = null
+      var hideFloat = 0
+      var triggerWord = null
+      var dictData={'default':null}
+      var pquery = false
+      var testAlpha = /^[a-zA-Z]+$/i
+      var toughCount = 0
+      var toughArr = []
+      var toughOO = []
+      var paperGoon = 0
+      var zoneMap = null
+
+      /*ballball start*/
+        var canvas = document.getElementById('ballball');
+        var ctx = canvas.getContext('2d');
+        // var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+        // grd.addColorStop(0,"black");
+        // grd.addColorStop(1,"white");
+
+        //range控件信息
+        var rangeValue = paperGoon//range.value;
+        var nowRange = 0; //用于做一个临时的range
+        //画布属性
+        var mW = canvas.width = 250;
+        var mH = canvas.height = 250;
+        var lineWidth = 2;
+        //圆属性
+        var r = mH / 2; //圆心
+        var cR = r - 16 * lineWidth; //圆半径
+        //Sin 曲线属性
+        var sX = 0;
+        var sY = mH / 2;
+        var axisLength = mW; //轴长
+        var waveWidth = 0.015 ; //波浪宽度,数越小越宽
+        var waveHeight = 6; //波浪高度,数越大越高
+        var speed = 0.09; //波浪速度，数越大速度越快
+        var xOffset = 0; //波浪x偏移量
+        ctx.lineWidth = lineWidth;
+        //画圈函数
+        var IsdrawCircled = false;
+        var drawCircle = function(){
+        ctx.beginPath();
+        ctx.strokeStyle = '#bfefe4';
+        ctx.arc(r, r, cR+5, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(r, r, cR, 0, 2 * Math.PI);
+        ctx.clip();
+        }
+        //画sin 曲线函数
+        var drawSin = function(xOffset){
+        ctx.save();
+        var points=[]; //用于存放绘制Sin曲线的点
+        ctx.beginPath();
+        //在整个轴长上取点
+        for(var x = sX; x < sX + axisLength; x += 20 / axisLength){
+        //此处坐标(x,y)的取点，依靠公式 “振幅高*sin(x*振幅宽 + 振幅偏移量)”
+        var y = -Math.sin((sX + x) * waveWidth + xOffset);
+        var dY = mH * (1 - nowRange / 100 );
+        points.push([x, dY + y * waveHeight]);
+        ctx.lineTo(x, dY + y * waveHeight);
+        }
+        //封闭路径
+        ctx.lineTo(axisLength, mH);
+        ctx.lineTo(sX, mH);
+        ctx.lineTo(points[0][0],points[0][1]);
+        ctx.fillStyle = '#93ffde';
+        ctx.fill();
+        // ctx.fillStyle=grd;
+        // ctx.fillRect(0,0,300,300);
+        ctx.restore();
+        };
+        //写百分比文本函数
+        var drawText = function(){
+        ctx.save();
+        var size = 0.6*cR;
+        ctx.font = size + 'px Microsoft Yahei';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "rgba(06, 85, 128, 0.8)";
+        if(nowRange <100){
+          var fillss = ~~nowRange+'%'
+        }else{
+          var fillss = localStorage.views+'th'
+        }
+        ctx.fillText(fillss, r, r + size / 2);
+        //ctx.strokeText(~~nowRange, r, r + size / 2);
+        ctx.restore();
+        };
+        var myReq = null
+        function ballball(){
+          ctx.clearRect(0, 0, mW, mH);
+          rangeValue = paperGoon
+          if(IsdrawCircled == false){
+          drawCircle();
+          }
+          if(nowRange <= rangeValue){
+          var tmp = 1;
+          nowRange += tmp;
+          }
+          if(nowRange > rangeValue){
+          var tmp = 1;
+          nowRange -= tmp;
+          }
+          drawSin(xOffset);
+          drawText();
+          xOffset += speed;
+          if(paperGoon>=100){
+            $('#start-words-test').show()
+            //window.cancelAnimationFrame(myReq);
+          }
+          //myReq = requestAnimationFrame(ballball);
+        }
+      $('#myCarousel').on('click','.carousel-caption',function(){
+        var ops = $(this).attr('data-opacity')
+        if(ops==1){
+          $(this).animate({'opacity':0})
+          $(this).attr('data-opacity','0')
+        }else{
+          $(this).animate({'opacity':1})
+          $(this).attr('data-opacity','1')
+        }
+      })
+      function multiplyArrayElement(num) {
+          return num * document.getElementById("multiplyWith").value;
+      }
+
+      function gen_carousel(){
+        var carNo = localStorage.carousel*1
+        if(carNo && carNo >0){
+          var randomArr = []
+          var imgArr = ['https://www.bing.com/az/hprichbg/rb/OtterChillin_ZH-CN11488013572_1920x1080.jpg','https://www.bing.com/az/hprichbg/rb/Qxi_ZH-CN15613902048_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/BulgariaPerseids_ZH-CN11638911564_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/SchonnbrunnPark_ZH-CN8641092561_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/PortAntonio_ZH-CN10325538004_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/HighlandTige_ZH-CN11284423315_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/FringeFireworks_ZH-CN10750567003_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/MorondavaBaobab_ZH-CN11131924506_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/UrbanLight_ZH-CN6248743710_1920x1080.jpg','https://www.bing.com/az/hprichbg/rb/MoriBuilding_ZH-CN5143587469_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/PuffinWales_ZH-CN12110916089_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/AuroraPhotographer_ZH-CN11480495787_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/BlueShark_ZH-CN12265881842_1920x1080.jpg','https://www.bing.com/az/hprichbg/rb/GeorgeMeade_EN-US9381168835_1920x1080.jpg','https://www.bing.com/az/hprichbg/rb/MNFireworks_EN-US9611301754_1920x1080.jpg','https://cn.bing.com/az/hprichbg/rb/PortAntonio_ZH-CN10325538004_1920x1080.jpg','']
+          var mottoLen = mottoArr.length
+          
+          var slideDotOl='<ol class="carousel-indicators">'
+          var slideContent='</ol><div class="carousel-inner">'
+          for(var i=0; i< carNo; i++){
+            while(true){
+              var randomNum = parseInt(Math.random()*(mottoLen-1),10)
+              if(randomArr.indexOf(randomNum)<0){
+                randomArr.push(randomNum)
+                break
+              }
+            }
+            var arrLen = randomArr.length - 1
+            var chooseMotto = mottoArr[arrLen]
+            var mottoFill = '<h1 class="mottoh1en">'+chooseMotto['en']+'</h1><h6 class="mottoh6auth">'+chooseMotto['auth']+'</h6><h6 class="mottoh6cn">'+chooseMotto['cn']+'</h6>'
+            if(arrLen == 0){
+              var slideTo = '<li data-target="#myCarousel" data-slide-to="'+arrLen+'" class="active"></li>'
+              var caps = '<div class="item active"><img src="'+imgArr[arrLen]+'" alt="First slide" class="poster-img" data-opacity="1"><div class="carousel-caption">'+mottoFill+'</div></div>'
+            }else{
+              var slideTo = '<li data-target="#myCarousel" data-slide-to="'+arrLen+'"></li>'
+              var caps = '<div class="item"><img src="'+imgArr[arrLen]+'" alt="First slide" class="poster-img" data-opacity="1"><div class="carousel-caption">'+mottoFill+'</div></div>'
+            }
+            slideDotOl += slideTo
+            slideContent += caps
+          }
+          var preOrNext = '</div><a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="fa fa-angle-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="fa fa-angle-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>'
+          var result = slideDotOl+slideContent+preOrNext
+          $('.webTitle').slideUp(234)
+          $('#myCarousel').html(result)
+        }else{
+          $('.webTitle').show()
+          $('#myCarousel').html('')
+          $('#carouselChoose').find('.hidea').slideUp(334)
+        }
+      }
+      gen_carousel()
+      $('#slideImgAdd').click(function(){
+        if($('#carouselChoose').find('.hidea').is(':hidden')){
+          $('#carouselChoose').find('.hidea').fadeIn(234)
+        }else{
+          $('#carouselChoose').find('.hidea').slideUp(334)
+        }
+        
+      })
+      $('.carousel-add-minus').click(function(){
+        var nowNo = $('#carouselNo').text()*1
+        if($(this).hasClass('fa-minus-circle')){
+          nowNo -= 1
+        }else{
+          nowNo +=1
+        }
+        if(nowNo <0){
+          nowNo = 0
+        }
+        if(nowNo >9){
+          nowNo = 9
+        }
+        localStorage.carousel = nowNo
+        $('#carouselNo').text(nowNo)
+        gen_carousel()
+      })
+      function fillWordTest(wordno){
+        var wordno = wordno*1
+        var jsonDataBasic = dictData['default']
+        var toughLen = toughArr.length
+        var value = toughArr[wordno]
+          try{
+            var exArr = jsonDataBasic[value]['ex']
+          }catch(err) { 
+            var exArr = []
+          }
+          var exLi = ''
+          for(var i in exArr){
+              exLi += '<li>'+exArr[i]+'</li>'
+          }
+          var wordss = [value]
+          var opsArr = [exLi]
+          var guessOptions = ''
+          var step = Math.floor(toughLen/3)
+          for(var i=0;i<3;i++){
+              var mins = step*i
+              var maxs = step*(i+1)
+              var randd = mins + Math.floor(Math.random() * (maxs - mins + 1))
+              var opWord = toughArr[randd]
+              try{
+                exArr = jsonDataBasic[opWord]['ex']
+              }catch(err) { 
+                exArr = []
+              }
+              if (exArr.length == 0){
+                opWord = toughArr[randd+1]
+                try{
+                  exArr = jsonDataBasic[opWord]['ex']
+                }catch(err) { 
+                  exArr = []
+                }
+              }
+              wordss.push(opWord)
+              exLi = ''
+              for(var j in exArr){
+                exLi += '<li>'+exArr[j]+'</li>'
+              }
+              opsArr.push(exLi)
+
+          }
+          var aaa = []
+          opsArr = opsArr.slice(0,4)
+          var ids=['collapseA','collapseB','collapseC','collapseD']
+          ids = ids.map(function(currentValue,index,arr){return currentValue+value})
+          var ops = ['  Option A  ','  Option B  ','  Option C  ','  Option D  ']
+          var rightO = 0
+          while(true){
+            var aLen = aaa.length
+            if(aLen == 4){
+                break
+            }else{
+              var bbb = parseInt(Math.random()*(4),10)
+              if(aaa.indexOf(bbb) <0){
+                if(wordss[bbb] == value){
+                  rightO = aLen
+                }
+                aaa.push(bbb)
+                var cls = 'panel-collapse collapse in'
+                if(aLen == 0){
+                  cls = 'panel-collapse collapse in'
+                }
+                var sppp = '<input type="radio" name="guessWordInput" class="guessWordInput" data-value="'+value+'" value="'+wordss[bbb]+'">'
+                guessOptions += '<div class="textcenter"><p><span>'+sppp+'</span><a data-toggle="collapse" href="#'+ids[aLen]+'">'+ops[aLen]+'</a></p><div id="'+ids[aLen]+'" class="'+cls+'"><div class="panel-body"><ul class="wordExplanationCN">'+opsArr[bbb]+'</ul></div></div></div>'
+              }
+            }
+          }
+          if(wordno!=0){
+            guessOptions+='<i class="fa fa-hand-o-left words-next-pre" data-word="'+(wordno-1)+'">'+toughArr[wordno-1]+'</i>'
+          }
+          if(wordno<=toughLen-2){
+            guessOptions+='<i class="fa fa-hand-o-right  words-next-pre" data-word="'+(wordno+1)+'">'+toughArr[wordno+1]+'</i>'
+          }
+          // }else{
+          //   $('#myModal .modal-footer').html('<button type="button" class="btn btn-success" id="view-words-result">View Result</button>')
+          // }
+        $('#myModalLabel').html(value)
+        $('#myModal .modal-body').html(guessOptions)
+      }
+      $('#myModal').on('click','.words-next-pre',function(){
+        var wordno = $(this).attr('data-word')
+        fillWordTest(wordno)
+      })
+      $('#myModal').on('click','#view-words-result',function(){
+        $('#myModalLabel').html('Words Test Report')
+        var toughLen = toughArr.length
+        var rr = wordsTest['right'].length
+        var ww = wordsTest['wrong'].length
+        var xxx = '<p class="wordTitle">Total: <b>'+toughLen+'</b></p><p class="successGreen">Correct: <b>'+rr+'</b></p><p class="failedRed">Failed: <b>'+ww+'</b></p>'
+        var missa = toughLen-rr-ww
+        if(missa >= 1){
+          xxx += '</p><p class="failedRed">Missed: <b>'+missa+'</b></p>'
+        }
+        var btt = '<p><button type="button" class="btn btn-primary retestAll" style="margin: 9px;">Retest All</button>'
+        if(rr != toughLen){
+          btt += '<button type="button" class="btn btn-primary retestError" style="margin: 9px;">Retest Incorrect</button>'
+        }
+        xxx += btt+'</p>'
+        $('#myModal .modal-body').html(xxx)
+        $('#myModal .modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>')
+      })
+      $('body').on('click','.retestAll',function(){
+        toughArr = toughOO
+        $('#start-words-test').trigger('click')
+      })
+      $('body').on('click','.retestError',function(){
+        var tmp = []
+        for(var a in toughArr){
+          if(wordsTest['right'].indexOf(toughArr[a]) <0){
+            tmp.push(toughArr[a])
+          }
+        }
+        toughArr = tmp
+        $('#start-words-test').trigger('click')
+      })
+      $('#start-words-test').click(function(){
+        if(!$('#clickWordsDict').is(':hidden')){
+          $('#clickWordsDict').fadeOut(234)
+        }
+        wordsTest = {'right':[],'wrong':[]}
+        fillWordTest(0)
+        $('#myModal .modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button><button type="button" class="btn btn-success" id="view-words-result">View Result</button>')
+      $('.margintop23').remove()
+      $('#myModal').modal('show')
+      })
+      function wordSearch(value,basicLookup){
+      dealWithFloatDiv('',true,false,true,false)
+              if(!value){
+                var value = $('#lookup-dict-input').val().trim();
+                if(!value.length){
+                     $('.search-input').focus()
+                    return false
+                }
+                if(!testAlpha.test(value)){
+                    var tips = '<span class="error">[' + value + ']</span> Illegal input, must be English word!'
+                    dealWithFloatDiv(tips,false,true,true)
+                    return false
+                }
+                if (value.length == 1){
+                  dealWithFloatDiv('Please Remember THE 26 : A~B~C~D~E~F~G~H~I~J~K~L~M~N~O~P~Q~R~S~T~U~V~W~X~Y~Z~~~!',false,false,false,false,true)
+                  return false
+                }
+              }
+                var valueO = value.toLocaleLowerCase()
+                var valueArr = [valueO]
+                value = valueO.slice(-4)
+                if(value.match("ies") || value.match("ied")){
+                    valuetmp = valueO.slice(0,-3)+'y'
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("ing")){
+                    valuetmp = valueO.slice(0,-3)
+                    valueArr.push(valuetmp)
+                    valuetmp += 'e'
+                    valueArr.push(valuetmp)
+                }
+                var lastStr = valueO.slice(-1)
+                if(lastStr == 's'){
+                    valuetmp = valueO.slice(0,-1)
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("tion")){
+                    valuetmp = valueO.slice(0,-4)
+                    valueArr.push(valuetmp)
+                    value += 'te'
+                    valueArr.push(valuetmp)
+                }
+                lastStr = valueO.slice(-2)
+                if(lastStr == 'ed'){
+                    valuetmp = valueO.slice(0,-2)
+                    valueArr.push(valuetmp)
+                    valuetmp += 'e'
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("est")){
+                    valuetmp = valueO.slice(0,-3)
+                    valueArr.push(valuetmp)
+                    valuetmp = valueO.slice(0,-4)
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("ers")){
+                    valuetmp = valueO.slice(0,-3)
+                    valueArr.push(valuetmp)
+                    valuetmp = valueO.slice(0,-2)
+                    valueArr.push(valuetmp)
+                    valuetmp = valueO.slice(0,-1)
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("ly")){
+                    valuetmp = valueO.slice(0,-1)
+                    valueArr.push(valuetmp)
+                    valuetmp = valueO.slice(0,-2)
+                    valueArr.push(valuetmp)
+                }
+                if(value.match("ily")){
+                    valuetmp = valueO.slice(0,-3) + 'y'
+                    valueArr.push(valuetmp)
+                }
+                try{
+                    var jsonDataBasic = dictData['default']
+                    for(var item in valueArr){
+                      value = valueArr[item]
+                      if(jsonDataBasic && jsonDataBasic[value]){
+                        break
+                      }
+                      if(dictData['economist_basic']){
+                        jsonDataBasic = dictData['economist_basic']
+                      }
+                      if(jsonDataBasic[value]){
+                        break
+                      }
+                      if(!jsonDataBasic[value] && dictData['cet46_basic']){
+                          jsonDataBasic = dictData['cet46_basic']
+                      }
+                      if(jsonDataBasic[value]){
+                        break
+                      }
+                      
+                    }
+                    if(jsonDataBasic[value]){
+                      $('.wordName').text(value)
+                      try{
+                      var proEn = jsonDataBasic[value]['pron']['peg']
+                      var proAm = jsonDataBasic[value]['pron']['pam']
+                    } catch(err) { 
+                        var proEn = jsonDataBasic[value]['pro_en']
+                      var proAm = jsonDataBasic[value]['pro_am']
+                    }
+                      var proLi = ''
+                      if(proEn){
+                        $('.wordPro_p').show()
+                        if(proEn.match("英")){
+                          proLi += '<li>'+proEn+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }else{
+                          proLi += '<li><span class="wordTitle">英 </span>'+proEn+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }
+                      }else{
+                        $('.wordPro_p').hide()
+                      }
+                      if(proAm){
+                        if(proAm.match("美")){
+                          proLi += '<li>'+proAm+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }else{
+                          proLi += '<li><span class="wordTitle">美 </span>'+proAm+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }
+                      }
+                      $('.wordPro').html(proLi)
+                      var exLi = ''
+                      try{
+                      var exArr = jsonDataBasic[value]['ex']
+                    }catch(err) { 
+                      console.log(err)
+                      var exArr = []
+                    }
+
+                      for(var i in exArr){
+                          exLi += '<li>'+exArr[i]+'</li>'
+                      }
+                      if(exLi){
+                        $('#menu4 .wordExplanationCN_p').show()
+                        
+                        $('#menu4 .wordExplanationCN').html(exLi)
+                      }else{
+                        $('#menu4 .wordExplanationCN_p').hide()
+                      }
+                      if(basicLookup){
+                        return false
+                      }
+                      $('.searchResult').show()
+                      try{
+                            var jsonDataModel = dictData['default']
+                            if(!jsonDataModel[value]){
+                              if(dictData['economist_model']){
+                                jsonDataModel = dictData['economist_model']
+                              }
+                              if(!jsonDataModel[value] && dictData['cet46_model']){
+                                jsonDataModel = dictData['cet46_model']
+                              }
+                            }
+                             try{
+                              var example = jsonDataModel[value]['eg2']
+                             }catch(err) { 
+                              console.log(err)
+                               var example = jsonDataModel[value]['eg']
+                            }
+                            
+                            if(example){
+                              $('#centences').show()
+                                var toFillSentence = ''
+                                 for(var i in example){
+                                  var nu = i*1+1
+                                  toFillSentence += '<p><span class="wordTitle">例句'+nu+'：</span><span class="wordSentenceEn">'+example[i][0]+'</span></p><p><span class="wordTitle">例译：</span><span class="wordSentenceCn">'+example[i][1]+'</span></p>'
+                                 }
+                                 $('#centences').html(toFillSentence)
+                            }else{
+                               $('#centences').hide()
+                            }
+                            if(jsonDataModel[value]['wp'] != []){
+                              $('.wordPhrases_p').show()
+                              var phrases = jsonDataModel[value]['wp']
+                              var phraseLi = ''
+                              var no = 0
+                              for(var item in phrases){
+                                no += 1
+                                phraseLi += '<li><span class="wordTitle">'+no+'：</span><span class="wordSentenceEn">'+item+'</span></li><li class="phraseCn"><span class="wordSentenceCn">'+phrases[item]+'</span></li>'
+                              }
+                              $('#wordPhrases').html(phraseLi)
+                            }else{
+                              $('.wordPhrases_p').hide()
+                            }
+                          } catch(err) { 
+                              console.log('No model sentence and phrase!')
+                              return false
+                          }
+                          
+                      }else{
+                        if(basicLookup){
+                          $('.basic_dict_error').html('It seems info not match this word, please click search icon to do a further lookup.')
+                          $('.basic_dict_error').show()
+                          return false
+                        }
+                          var tips = '<span class="error">' + value + '</span> meets 404!'
+                          $('#search-input').val('')
+                          dealWithFloatDiv(tips,false,true,true)
+                          
+                      }
+                  
+                }catch(err) { 
+                  if(basicLookup){
+                    $('.basic_dict_error').html('It seems info not match this word, please click search icon to do a further lookup.')
+                    $('.basic_dict_error').show()
+                    return false
+                  }
+                  dealWithFloatDiv(tips,false,true,true)
+                  return false
+                }
+        }
+      function GetRequest() {
+          var url = location.search; //获取url中"?"符后的字串
+           var theRequest = new Object();
+           if (url.indexOf("?") != -1) {
+              var str = url.substr(1);
+              strs = str.split("&");
+              for(var i = 0; i < strs.length; i ++) {
+                 theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+              }
+           }
+           return theRequest;
+        }
+      var Request = new Object();
+      Request = GetRequest();
+      try{
+        var defaultBlock = Request['source']
+      }catch(err) {
+        console.log(err,'source not found')
+      }
+      if(!defaultBlock){
+        defaultBlock = 'The_Economist'
+      }
+      var queryPaper = Request['paper']
+      if(queryPaper){
+        getData('type',true,false)
+      }
+      document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            
+            if(e && e.keyCode == 13){
+              if(!$('#search-paper-input').is(':hidden')){
+                $('#search-paper-go').trigger('click')
+              }
+              if(!$('#lookup-dict-input').is(':hidden')){
+                 $('#search-word-go').trigger('click')
+              }
+            }
+        }; 
+      $('#search-word-go').click(function(){
+                wordSearch()
+        })
+      $('#mymotto').blur(function(){
+        var moo = $(this).val()
+        localStorage.mymotto = moo
+      })
+       $('#myModal').modal('show')
+       $('#swith-nav-a').find('a').click(function(){
+        var switchTo = $(this).attr('href')
+        if(switchTo == '#paper-section'){
+          if($('#articleContent p').length ==0){
+            getData('type',true,false)
+          }
+        }
+      })
+       function fillBasicLookup(value){
+                var value = value
+                var jsonDataBasic = dictData['default']
+                if(jsonDataBasic[value]){
+                      $('.wordName').text(value)
+                      try{
+                      var proEn = jsonDataBasic[value]['pron']['peg']
+                      var proAm = jsonDataBasic[value]['pron']['pam']
+                    } catch(err) { 
+                        var proEn = jsonDataBasic[value]['pro_en']
+                      var proAm = jsonDataBasic[value]['pro_am']
+                    }
+                      var proLi = ''
+                      if(proEn){
+                        $('.wordPro_p').show()
+                        if(proEn.match("英")){
+                          proLi += '<li>'+proEn+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }else{
+                          proLi += '<li><span class="wordTitle">英 </span>'+proEn+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }
+                      }else{
+                        $('.wordPro_p').hide()
+                      }
+                      if(proAm){
+                        if(proAm.match("美")){
+                          proLi += '<li>'+proAm+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }else{
+                          proLi += '<li><span class="wordTitle">美 </span>'+proAm+'<span class="fa fa-volume-up wordsVoice"></span></li>'
+                        }
+                      }
+                      $('.wordPro').html(proLi)
+                      var exLi = ''
+                      try{
+                        var exArr = jsonDataBasic[value]['ex']
+                      }catch(err) { 
+                        var exArr = []
+                      }
+                      for(var i in exArr){
+                          exLi += '<li>'+exArr[i]+'</li>'
+                      }
+                      if(exLi){
+                        var wordss = [value]
+                        var opsArr = [exLi]
+                        var guessOptions = ''
+                        var step = Math.floor(toughCount/3)
+                        for(var i=0;i<3;i++){
+                            var mins = step*i
+                            var maxs = step*(i+1)
+                            var randd = mins + Math.floor(Math.random() * (maxs - mins + 1))
+                            var opWord = toughArr[randd]
+                            try{
+                              exArr = jsonDataBasic[opWord]['ex']
+                            }catch(err) { 
+                              exArr = []
+                            }
+                            if (exArr.length == 0){
+                              opWord = toughArr[randd+1]
+                              try{
+                                exArr = jsonDataBasic[opWord]['ex']
+                              }catch(err) { 
+                                exArr = []
+                              }
+                            }
+                            wordss.push(opWord)
+                            exLi = ''
+                            for(var j in exArr){
+                              exLi += '<li>'+exArr[j]+'</li>'
+                            }
+                            opsArr.push(exLi)
+
+                        }
+                        var aaa = []
+                        opsArr = opsArr.slice(0,4)
+                        var ids=['collapseA','collapseB','collapseC','collapseD']
+                        var ops = ['  Option A  ','  Option B  ','  Option C  ','  Option D  ']
+                        var rightO = 0
+                        while(true){
+                          var aLen = aaa.length
+                          if(aLen == 4){
+                              break
+                          }else{
+                            var bbb = parseInt(Math.random()*(4),10)
+                            if(aaa.indexOf(bbb) <0){
+                              if(wordss[bbb] == value){
+                                rightO = aLen
+                              }
+                              aaa.push(bbb)
+                              var cls = 'panel-collapse collapse in'
+                              if(aLen == 0){
+                                cls = 'panel-collapse collapse in'
+                              }
+                              var sppp = '<input type="radio" name="guessWordInput" class="guessWordInput" data-value="'+value+'" value="'+wordss[bbb]+'">'
+                              guessOptions += '<div><p><span>'+sppp+'</span><a data-toggle="collapse" href="#'+ids[aLen]+'">'+ops[aLen]+'</a></p><div id="'+ids[aLen]+'" class="'+cls+'"><div class="panel-body"><ul class="wordExplanationCN">'+opsArr[bbb]+'</ul></div></div></div>'
+                            }
+                          }
+                        }
+                        guessOptions += '<p class="hidea rightO">正确的释义选项为：<b>'+ops[rightO]+'</b></p>'
+                        $('#wordGuessM').html(guessOptions)
+                      }
+                  $('#clickWordsDict').slideDown(256)
+                }
+        }
+        $('body').on('click','.guessWordInput',function(){
+          var current = $(this).val()
+          var rightV = $(this).attr('data-value')
+          if(current == 0){
+            return
+          }
+          if(current != rightV){
+              $(this).parent().parent().prepend('<i class="fa fa-frown-o"></i>')
+              wordsTest['wrong'].push(rightV)
+              var i = wordsTest['right'].indexOf(rightV)
+              if(i >=0){
+                wordsTest['right'] = wordsTest['right'].slice(0,i).concat(wordsTest['right'].slice(i+1))
+              }
+          }else{
+              wordsTest['right'].push(rightV)
+              var i = wordsTest['wrong'].indexOf(rightV)
+              if(i >=0){
+                wordsTest['wrong'] = wordsTest['wrong'].slice(0,i).concat(wordsTest['wrong'].slice(i+1))
+              }
+            $(this).parent().parent().prepend('<i class="fa fa-smile-o"></i>')
+          }
+          $(this).val(0)
+          // $('#wordGuessM').find('.hidea').show()
+        })
+        $('#articleContent').on('click','.word-wrap-span',function(e){
+              var cliLen = (clickWords.length/toughCount)*0.66
+              var timess = $('#runningTimer').text().split(':')
+              var mm = timess[0]*1+timess[1]*1*0.01
+              var timsPct = (mm/supposeTime)*0.66
+              var wordPct = cliLen*timsPct//(timsPct/2)
+              paperGoon = (timsPct+wordPct)*100+1
+              if(paperGoon>=100){
+                var tmp = currentPaperFile.slice(0,-5)
+                if(localStorage.reads.indexOf(tmp)<0){
+                  localStorage.views = localStorage.views*1 + 1
+                  var x = new Date()
+                  var y = x.toString().split(' ')
+                  var z = y.slice(0,5)
+                  localStorage.lastReadTime = z.join(' ')
+                  $('.paperNos').text(localStorage.views)
+                  localStorage.reads += tmp+','
+                }
+                $('#start-words-test').show()
+              }
+
+              if(triggerWord != null){
+                    var toSearch = triggerWord
+                    triggerWord = null
+              }else{
+                var toSearch = $(this).text()
+               if(toSearch.match(',')){
+                  var index = toSearch.match(',')['index']
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.match('"')){
+                  var index = toSearch.match('"')['index']
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.match("'")){
+                  var index = toSearch.match("'")['index']
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.match("’")){
+                 var index = toSearch.match("’")['index']
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.indexOf("[") == 0 || toSearch.indexOf("(") == 0){
+                  toSearch = toSearch.slice(1)
+               }
+               if(toSearch.indexOf("]") >0){
+                  var index = toSearch.indexOf("]")
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.indexOf(")") >0){
+                  var index = toSearch.indexOf(")")
+                  toSearch = toSearch.slice(0,index)
+               }
+               if(toSearch.match("”")){
+                var index = toSearch.match("”")['index']
+                if(!toSearch.match("“")){
+                  toSearch = toSearch.slice(0,index)
+                }else{
+                 toSearch = toSearch.slice(1,index)
+                }
+               }
+               if(toSearch.match("“") || toSearch.match("“")){
+                  toSearch = toSearch.slice(1)
+                }
+              }
+               $('.wordName').html(toSearch)
+               if(toSearch){
+                if(clickWords.indexOf(toSearch) <0){
+                  clickWords.push(toSearch)
+                }
+                fillBasicLookup(toSearch)
+               }else{
+                  $('.basic_dict_error').html('It seems info not match this word, please click search icon to do a further lookup.')
+                  $('.basic_dict_error').show()
+               }
+               $('.with_motto_footer').fadeOut(234)
+               // $(document).one("click", function(){
+               //          $("#clickWordsDict").hide();
+               //      });
+               //      e.stopPropagation();
+        })
+  $('body').on('click','#showTough',function(e){
+  $('#toughWords-div').slideDown(356)
+  $('.with_motto_footer').fadeOut(234)
+  $(document).one("click", function(){
+                        $("#toughWords-div").hide();
+                    });
+              e.stopPropagation();
+})
+
+
+$('#toughWords-div').on('click','#wordsOl li',function(e){
+  var value = $(this).text()
+  fillBasicLookup(value)
+})
+$('.showNone').click(function(){
+  $('#clickWordsDict').slideUp(369)
+})
+$('body').on('click','.wordPro li',function(e){
+    var word = $('.wordName:first').text()
+    var youdaoWordAudio = 'https://dict.youdao.com/dictvoice?audio='+word+'&type=1'// or type=1
+    var x = document.createElement("AUDIO");
+    x.setAttribute("src", youdaoWordAudio);
+    x.setAttribute("autoplay", "autoplay");
+    $('#voiceDiv').html(x)
+    //e.stopPropagation();
+})
+
+// $('#wordGuessM').click(function(e){
+//   e.stopPropagation();
+// })
+$('.switchPaper').click(function(){
+  var paperName = $(this).attr('data-link')
+  if(paperName == 'abcdeflockey'){
+    getData('type',true,false)
+  }else{
+    paperOload = paperName
+    getData('type',true,paperName)
+  }
+})
+       function getData(type,ifmd,filename){
+          hideFloat +=1
+          var filename = filename
+          if(ifmd){
+            var queryPaper = Request['paper']
+            if(queryPaper && pquery == false){
+              pquery = true
+              var year = queryPaper.slice(0,4)
+              var month = queryPaper.slice(4,6)*1
+              var day = queryPaper.slice(6,8)*1
+              var no = queryPaper.slice(8)
+              filename = year+'_'+month+'_'+day+'_'+no*1+'.json'
+              console.log(filename,queryPaper)
+            }else{
+              filename = paperOload
+              var dateArr = filename.split('_')
+              var year = dateArr[0]
+              var month = dateArr[1]
+              var day = dateArr[2]
+            }
+
+            var getUrl = './'+defaultBlock+'/a'+year+'/a'+month+'/'+filename
+            var dataType = 'json'
+            dealWithFloatDiv('',true,false,false)
+          }else{
+            var toDict = type2Dict[type]
+            //var tips = '<span class="normalItem">'+toDict+' ...</span>'
+            dealWithFloatDiv('',true,false,false)
+            var baseUrl = './dictionary/'
+            //var baseUrl = './explanations/'
+            var getUrl = baseUrl+type+'.json'
+             var dataType = 'json'
+             }
+          $.ajax({
+                type:"GET",
+                url: getUrl,
+                data: null,
+                dataType:dataType,
+                cache:false,
+                success: function(data) {
+                  hideFloat -= 1
+                  if(ifmd){
+                        currentPaperFile = filename
+                        var content = data
+                        var converter = new showdown.Converter();
+                        var article = content['content']
+                        var regex = /fa fa-info-circle/g
+                        article = article.replace(regex,'word-wrap-span')
+                        var html = converter.makeHtml(article);
+                        document.getElementById("articleContent").innerHTML = html;
+                        clickWords = []
+                        try{
+                          var statistics = content['paperStatistics']
+                          var wordsSpan = ''
+                          var keyWords = statistics['keywords']
+                          var keyArr = keyWords.split(',')
+                          var keyLen = keyArr.length
+                          var touchWords = content['assistent']
+                          for(i=0;i<keyLen;i++){
+                            var preDot = '<li class="keyword-span"> '
+                            if (keyArr[i] in touchWords){
+                                preDot = '<li class="keyword-span">﹡'
+                            }
+                            wordsSpan += preDot+keyArr[i]+'</li>'
+                          }
+                          // var wordsSpan = keyArr.join(', ')
+                          //$('#spankeywords').html(wordsSpan)
+                          var wordsLis = ''
+                          toughCount = 0
+                          for(let word in touchWords){
+                              toughCount += 1
+                              wordsLis += '<li>'+word+'</li>'
+                              toughArr.push(word)
+                          }
+                          toughOO = toughArr
+                          $('#toughWords-div').find('ol').html(wordsLis)
+                          // if(localStorage.username != 'Lockey23'){
+                          //   myReq = requestAnimationFrame(ballball);
+                          // }else{
+                          //   $('#ballball').hide()
+                          //   $('.paperNos').show()
+                          // }
+
+                          var wordsData =  '<span class="statistics-no"><span class="clickWordsDict_title"><span class="fa fa-opencart" id="showTough"> Suggested Focus: </span></span><span class="words-number">'+statistics['suggestedfocus']+'</span></span><span class="statistics-no"><span class="clickWordsDict_title"><span class="fa fa-slideshare" id="showTough">   Advanced Words: </span></span><span class="words-number">'+toughCount+'</span></span><span class="statistics-no"><span class="clickWordsDict_title">Words Set: </span><span class="words-number">'+statistics['wordsset']+'</span></span><span class="statistics-no"><span class="clickWordsDict_title">Total Words: </span><span class="words-number">'+statistics['allwords']+'</span></span><span class="statistics-no"><span class="clickWordsDict_title">Key Words: </span><ul style="padding: 0;margin-top: 8px;margin-bottom: 3px;">'+wordsSpan+'</ul></span>'
+                          supposeTime = statistics['suggestedfocus'].slice(0,2)
+                          //<span class="statistics-no"><span class="clickWordsDict_title">Article Content:</span></span>
+                          $('#spanstatistics').html(wordsData)
+                          $('#start-words-test').hide()
+                          if(readTimer != null){
+                            window.clearInterval(readTimer)
+                          }
+                            $('#runningTimer').text('00:00')
+                            var countTimes = 0
+                            readTimer = setInterval(function(){
+                              countTimes += 1
+                              ballball()
+                              if(countTimes %4 ==0){
+                                if(!$('#paper-section').is(':hidden')){
+                                  let tm = $('#runningTimer').text()
+                                  let arr = tm.split(':')
+                                  var mm = arr[0]
+                                  var ss = arr[1]
+                                  if(ss== 60){
+                                      ss = '00'
+                                      mm = mm *1 +1
+                                      if(mm <10){
+                                        mm = '0'+mm.toString()
+                                      }
+                                  }else{
+                                    ss = ss*1 +1
+                                    if(ss<10){
+                                      ss = '0'+ss.toString()
+                                    }
+                                  }
+                                  $('#runningTimer').text(mm+':'+ss)
+                                  var cliLen = (clickWords.length/toughCount)*0.66
+                                  mm = mm*1+ss*0.01
+                                  var timsPct = (mm/supposeTime)*0.66
+                                  var wordPct = cliLen*timsPct//(timsPct/2)
+                                  paperGoon = (timsPct+wordPct)*100+1
+                                }
+                              }
+                             
+                          },250)
+                          
+                           
+                           
+                          //$('#foucus_suggest').html('<span class="clickWordsDict_title">Suggested Focus: </span>'+statistics['suggestedfocus']+'</span>')
+                        }catch(err){
+                          console.log(err)
+                        }
+                        
+                        $('#mainTitle').html(content['Title'])
+                        var paperJsonDate = content['Date']
+                        var timeArr = paperJsonDate.slice(0,10).split('-')
+                        var hms = paperJsonDate.slice(10)
+                        var dateStr = '-- '+noTomonth[timeArr[1]*1-1]+' '+timeArr[2]+' '+timeArr[0] + hms
+                        $('#createDate').html(dateStr)
+                        $('#lastArt').attr('data-link',content['Last'])
+                        $('#nextArt').attr('data-link',content['Next'])
+                        dictData['default'] = content['assistent']
+                        $('#myModal').modal('hide')
+                        
+                        if($('#paper-section').is(':hidden')){
+                          $('#swith-nav-a').find('a.fa-wpforms').trigger('click')
+                        }
+                        dealWithFloatDiv('',true,false,true,false)
+                  }else{
+                     dictData[type] = data
+                     loadedDict.push(type)
+                    //dealWithFloatDiv('',false,false,true,true)
+                    var tips='<span class="success">'+toDict+' loaded!</span>'
+                    dealWithFloatDiv(tips,false,false,true,true)
+                  }
+                },
+                error: function(data) {
+                  hideFloat -=1
+                  if(ifmd){
+                    toDict = 'Sorry, but no more paper!'
+                  }else{
+                    toDict = '<span class="error">'+toDict+'</span> failed!'
+                  }
+                    dealWithFloatDiv(toDict,false,true,false,false)
+                  
+                }
+            });
+        }
+       $('body').on('click','.loadPage',function(){
+           paperOload = $(this).attr('data-link')
+           getData('type',true,false)
+        })
+
+       function getMorePapers(blockType){
+          $('#floatDiv').slideDown(356)
+          $.ajax({
+                type:"GET",
+                url: './'+defaultBlock+'/amore/'+morePaperLink+'.json',
+                data: null,
+                dataType:'json',
+                cache:false,
+                success: function(data) {
+                  paperListJson = data['papers']
+                  test = data['papers']
+                  var listLen = paperListJson.length
+                  var totalLoads = $('#myModalLabel').find('.totalLoads').text()*1+listLen
+                  var paperNo = 0
+                  if(moreTimes == 0){
+                    $('#myModal .modal-body').empty()
+                    totalLoads = listLen
+                    $('.margintop23').remove()
+                    $('#myModalLabel').html('<b>'+blockType+'</b> [<span class="totalLoads">'+totalLoads+'</span>]')
+                    var hot = '<span class="fa fa-fire" tile="latest paper"></span>'
+                    $('.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button><button type="button" class="btn btn-info morePapers" data-blockType="'+blockType+'">More</button>')
+                  }else{
+                    var hot = ''
+                  }
+                  $('#myModalLabel').find('.totalLoads').html(totalLoads)
+                  var resultLatest='<div class="col-sm-12">'
+                  for(var i=0;i<listLen;i++){
+                    if(i==0){
+                      paperOload = paperListJson[i]['link']
+                    }
+                    var link = paperListJson[i]['nos']
+                    if(!link){
+                      link = paperListJson[i]['link']
+                      let arr = link.split('_')
+                      if(arr[1].length == 1){
+                          arr[1] = '0'+arr[1]
+                      }
+                      if(arr[2].length == 1){
+                        arr[2] = '0'+arr[2]
+                      }
+                      link = arr.join('').slice(0,-5)
+                      
+                    }
+                    var paperJsonDate = paperListJson[i]['date']
+                    var timeArr = paperJsonDate.slice(0,10).split('-')
+                    var hms = paperJsonDate.slice(10)
+                    var dateStr = noTomonth[timeArr[1]*1-1]+' '+timeArr[2]+' '+timeArr[0] + hms
+                    var imgSrc = '<img src="'+paperListJson[i]['img']+'" class="img-responsive item-img"/>'
+                    if(localStorage.username == 'Lockey23' || !paperListJson[i]['img']){
+                        imgSrc = ''
+                    }
+                    resultLatest += '<div class="box-item"><div class="item-img-div"><h6 class="paperTitleh6"><a class="loadPage" href="javascript:void(0)" data-link="'+paperListJson[i]['link']+'">'+paperListJson[i]['title']+'</a></h6><p class="latest-timep">'+dateStr+hot+'</p><span class="timeSpan">'+imgSrc+'</span><p class="paperDesc">'+paperListJson[i]['desc']+' ...</p><p class="latest-timep"><a class="readMoreText loadPage" href="javascript:void(0)" data-link="'+paperListJson[i]['link']+'">Read More <span class="fa fa-hand-o-right"></span></a></p></div></div>'
+                  }
+                  moreTimes ++
+                  resultLatest += '</div>'
+                  if(moreTimes == 1){
+                    $('#myModal .modal-body').html(resultLatest)    
+                  }else{
+                    $('#myModal .modal-body').append(resultLatest)    
+                  }
+                       
+                   morePaperLink = data['more'].slice(0,-5)
+                   $('#myModal').modal('show')
+                   $('#floatDiv').fadeOut(556)
+                },
+                error: function(data) {
+                    var listInfo = '<span class="warning">Sorry, but no more papers!</span'
+                    dealWithFloatDiv(listInfo,false,true,false,false)
+                  
+                }
+      })
+        }
+       function getPageSize() {
+            var xScroll, yScroll;
+            if (window.innerHeight && window.scrollMaxY) {
+                xScroll = window.innerWidth + window.scrollMaxX;
+                yScroll = window.innerHeight + window.scrollMaxY;
+            } else {
+                if (document.body.scrollHeight > document.body.offsetHeight) { // all but Explorer Mac    
+                    xScroll = document.body.scrollWidth;
+                    yScroll = document.body.scrollHeight;
+                } else { // Explorer Mac...would also work in Explorer 6 Strict, Mozilla and Safari    
+                    xScroll = document.body.offsetWidth;
+                    yScroll = document.body.offsetHeight;
+                }
+            }
+            var windowWidth, windowHeight;
+            if (self.innerHeight) { // all except Explorer    
+                if (document.documentElement.clientWidth) {
+                    windowWidth = document.documentElement.clientWidth;
+                } else {
+                    windowWidth = self.innerWidth;
+                }
+                windowHeight = self.innerHeight;
+            } else {
+                if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode    
+                    windowWidth = document.documentElement.clientWidth;
+                    windowHeight = document.documentElement.clientHeight;
+                } else {
+                    if (document.body) { // other Explorers    
+                        windowWidth = document.body.clientWidth;
+                        windowHeight = document.body.clientHeight;
+                    }
+                }
+            }       
+            // for small pages with total height less then height of the viewport    
+            if (yScroll < windowHeight) {
+                pageHeight = windowHeight;
+            } else {
+                pageHeight = yScroll;
+            }    
+            // for small pages with total width less then width of the viewport    
+            if (xScroll < windowWidth) {
+                pageWidth = xScroll;
+            } else {
+                pageWidth = windowWidth;
+            }
+            arrayPageSize = new Array(pageWidth, pageHeight, windowWidth, windowHeight);
+            return arrayPageSize;
+        }
+       function getPaperList(){
+          $.ajax({
+                type:"GET",
+                url: './blocks.json',
+                data: null,
+                dataType:'json',
+                cache:false,
+                success: function(data) {
+                  var blockData = data['zones']
+                  zoneMap = blockData
+                  var listLen = data['zoneNo']
+                  paperOload = data['defaultPaper']
+                  var paperNo = 0
+                  var windowHW = getPageSize()
+                  var blockArr = []
+                  var blockArr1 = (localStorage.myblock).split(',')
+                  for(var i in blockArr1){
+                    if(blockArr1[i].length >1){
+                      blockArr.push(blockArr1[i])
+                    }
+                  }
+                  var blockNos = blockArr.length
+                  if(blockNos==4){
+                    var colClass = 'col-sm-3'
+                  }else if(blockNos == 3){
+                    var colClass = 'col-sm-4'
+                  }else if(blockNos == 2){
+                    var colClass = 'col-sm-6'
+                  }else{
+                    var colClass = 'col-sm-12'
+                  }
+                  if(blockNos>=4){
+                    colClass = 'col-sm-3'
+                  }
+                   var itemArr = []
+                  if(blockNos >4){
+                    blockNos = 4
+                  }
+                  for(var i=0;i<blockNos;i++){
+                    var colDiv = '<div class="'+colClass+' col-item'+(i+1)+'">'
+                    itemArr.push(colDiv)
+                  } 
+                  for(var i in blockData){
+                    if(blockArr.indexOf(i)<0){
+                      continue
+                    }
+                    var title=blockData[i]['title']
+                  //for(var i=0;i<listLen;i++){
+                    if(blockData[i]['logo'] != ''){
+                      var logo = '<h3 class="folio-title"><img src="'+blockData[i]['logo']+'" style="width: '+blockData[i]['logow']+';">'
+                    }else{
+                      var logo = '<h3 class="folio-title" style="'+blockData[i]['titleStyle']+'">'+blockData[i]['title']
+                    }
+
+                    var imgSrc = '<img src="'+blockData[i]['img']+'" class="img-responsive item-img"/>'+'<p class="blocks-paper-user"><span class="fa fa-newspaper-o"> '+blockData[i]['papers']+'</span><span class="fa fa-heart"> '+blockData[i]['focus']+'</span></p>'
+                    if(localStorage.username == 'Lockey23' || !blockData[i]['img']){
+                        imgSrc = ''
+                    }
+                    var desc = blockData[i]['desc']
+                    var fillDiv = '<div class="box-item" data-type="'+title+'" id="'+i+'"><div class="item-img-div"><a href="javascript:void(0)" class="overlay"><div class="folio-item-table"><div class="folio-item-cell">'+logo+'</h3></div></div></a>'+imgSrc+'<p class="ablock"><a>'+desc+'</a></p></div></div>'
+                    if(paperNo%4 ==0){
+                      itemArr[0] += fillDiv
+                    }else if(paperNo%4 ==1){
+                      itemArr[1] += fillDiv
+                    }else if(paperNo%4 ==2){
+                      itemArr[2] += fillDiv
+                    }else if(paperNo%4 ==3){
+                      itemArr[3] += fillDiv
+                    }else{
+                      console.log(i+' error')
+                    }
+                    paperNo += 1
+                  }
+                 itemArr = itemArr.map(function(currentValue,index,arr){return currentValue+'</div>'})
+                 itemArr = itemArr.slice(0,paperNo)
+                  var finalResult = itemArr.join('')//item1+'</div>'+item2+'</div>'+item3+'</div>'+item4+'</div>'
+                  $('#block-div').append(finalResult)         
+                   $('#floatDiv').fadeOut(556)
+                },
+                error: function(data) {
+                    var listInfo = '<span class="warning">Sorry, but the network... </span'
+                    dealWithFloatDiv(listInfo,false,true,false,false)
+                  
+                }
+      })
+    }
+    getPaperList()
+    $('#more-block .fa-braille').click(function(){
+      if($(this).parent().next('p').is(':hidden')){
+        $(this).html('<span class="fa fa-angle-double-up"></span>')
+        var blockArr = (localStorage.myblock).split(',')
+        var spans = ''
+        for(var i in zoneMap){
+          if(blockArr.indexOf(i)>=0){
+            spans += '<span class="fa fa-minus-circle add-remove-block" data-block="'+i+'">'+zoneMap[i]['title']+'</span>'
+          }else{
+            spans += '<span class="fa fa-plus-circle add-remove-block" data-block="'+i+'">'+zoneMap[i]['title']+'</span>'
+          }
+        }
+        $(this).parent().next('p').html(spans)
+        $(this).parent().next('p').slideDown(345)
+      }else{
+        $(this).html('<span class="fa fa-angle-double-down"></span>')
+        $(this).parent().next('p').slideUp(234)
+      }
+    })
+    $('#more-block').on('click','.add-remove-block',function(){
+      var data1 = $(this).attr('data-block')
+      var dataAll = $(this).text()
+      if($(this).hasClass('fa-minus-circle')){
+        localStorage.myblock = (localStorage.myblock).replace(data1,'')
+        var ida = '#'+data1
+        $(ida).remove()
+        var adds = '<span class="fa fa-plus-circle add-remove-block" data-block="'+data1+'">'+dataAll+'</span>'
+      }else{
+        var adds = '<span class="fa fa-minus-circle add-remove-block" data-block="'+data1+'">'+dataAll+'</span>'
+        localStorage.myblock += ','+data1
+
+
+        var title=zoneMap[data1]['title']
+        if(zoneMap[data1]['logo'] != ''){
+          var logo = '<h3 class="folio-title"><img src="'+zoneMap[data1]['logo']+'" style="width: '+zoneMap[data1]['logow']+';">'
+        }else{
+          var logo = '<h3 class="folio-title" style="'+zoneMap[data1]['titleStyle']+'">'+zoneMap[data1]['title']
+        }
+
+        var imgSrc = '<img src="'+zoneMap[data1]['img']+'" class="img-responsive item-img"/>'+'<p class="blocks-paper-user"><span class="fa fa-newspaper-o"> '+zoneMap[data1]['papers']+'</span><span class="fa fa-heart"> '+zoneMap[data1]['focus']+'</span></p>'
+        if(localStorage.username == 'Lockey23' || !zoneMap[data1]['img']){
+            imgSrc = ''
+        }
+        var desc = zoneMap[data1]['desc']
+        var fillDiv = '<div class="box-item" data-type="'+title+'" id="'+data1+'"><div class="item-img-div"><a href="javascript:void(0)" class="overlay"><div class="folio-item-table"><div class="folio-item-cell">'+logo+'</h3></div></div></a>'+imgSrc+'<p class="ablock"><a>'+desc+'</a></p></div></div>'
+        $('#block-div').find('div').first().append(fillDiv)
+      }
+      $(this).parent().prepend(adds)
+      $(this).remove()
+    })
+        $(function() {
+          $('#myModal').on('hide.bs.modal',
+          function() {
+              var tmp = $('#userName').val()
+              if(tmp){
+                localStorage.username = tmp
+                $('.usernameHold').html(tmp)
+              }
+          })
+      });
+      $('#closeFloat').click(function(){
+            $('#floatDiv').fadeOut(556)
+        })
+      var scrollDirect=function () {
+        var dalta = document.body.scrollTop;
+        window.addEventListener("scroll", function (event) {
+        event = event || window.event;
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(document).height();
+        var windowHeight = $(this).height();
+        var totalScroll = scrollHeight - windowHeight
+        var change = totalScroll- scrollTop
+        if((dalta - change) >0 ){
+          if(scrollTop > 160)
+          {
+              if($('.fa-arrow-circle-up').is(':hidden')){
+                $('.fa-arrow-circle-up').show()
+                $('#toggle-sidebar').animate({
+                    'opacity':'0.5',
+                    'font-size':'1.3em'
+                  },1269)
+                }
+              }
+          
+        }else{
+          if(!$('.fa-arrow-circle-up').is(':hidden')){
+            $('.fa-arrow-circle-up').hide()
+            $('#toggle-sidebar').animate({
+                  'opacity':'1',
+                  'font-size':'2.6em'
+                },800)
+            }
+        }
+        dalta = change
+       if(totalScroll - scrollTop > totalScroll-5){
+        //$('footer').show()
+       }
+      }, false);
+    }
+    scrollDirect(function (direction) {})
+      function dealWithFloatDiv(words,img,warningIcon,ifhide,successIcon,freecode){
+              $('#loadWords').html(words);
+              if(img){
+                $('#loadingImg').show()
+              }else{
+                $('#loadingImg').hide()
+              }
+              if(warningIcon){
+                $('#wariningIcon').show()
+              }else{
+                $('#wariningIcon').hide()
+              }
+               if($('#floatDiv').is(':hidden')){
+                $('#floatDiv').fadeIn(123)
+               }
+               if(freecode){
+                $('#normalTips_free-code-camp').show()
+               }else{
+                $('#normalTips_free-code-camp').hide()
+               }
+               if(successIcon){
+                $('#successIcon').show()
+               }
+              if(ifhide){
+                setTimeout(function(){
+                  $('#floatDiv').fadeOut(256)
+                  if(hideFloat <= 0){
+                    if(successIcon){
+                        $('#successIcon').hide()
+                      }
+                      $('.overlap').fadeOut(456)
+                  }
+                      
+                },600)
+              }
+              
+        }
+        
+        $(".sidebar-dropdown > a").click(function(){
+          $(".sidebar-submenu").slideUp(250);
+          if ($(this).parent().hasClass("active")){
+             $(".sidebar-dropdown").removeClass("active");
+             $(this).parent().removeClass("active");
+          }else{
+            $(".sidebar-dropdown").removeClass("active");
+            $(this).next(".sidebar-submenu").slideDown(250);
+            $(this).parent().addClass("active");
+          }
+
+        });
+
+         $("#toggle-sidebar").click(function(){
+           $(".page-wrapper").toggleClass("toggled");     
+         });
+
+           if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                   $(".sidebar-content").mCustomScrollbar({
+                            axis:"y",
+                            autoHideScrollbar: true,
+                            scrollInertia: 300
+                    });
+                    $(".sidebar-content").addClass("desktop");
+
+            }
+        $('body').bind('touchstart',function(e){
+          startX = e.originalEvent.changedTouches[0].pageX;
+          startY = e.originalEvent.changedTouches[0].pageY;
+        });
+        $("body").bind("touchmove",function(e){
+        
+        endX = e.originalEvent.changedTouches[0].pageX;
+        endY = e.originalEvent.changedTouches[0].pageY;
+        //获取滑动距离
+        distanceX = endX-startX;
+        distanceY = endY-startY;
+        console.log(distanceX,distanceY)
+        //判断滑动方向
+        if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX>60){
+          console.log('向右边滑动')
+          if(distanceX>60){
+            $("#toggle-sidebar").trigger('click')
+            $('#toggle-sidebar').animate({
+                  'opacity':'1',
+                  'font-size':'2.6em'
+                },800)
+          }
+            
+        }else if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX<-60){
+         
+            console.log('往左滑动');
+            if(distanceX<-60){
+                $("#toggle-sidebar").trigger('click')
+            }
+            
+        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY<50){
+          console.log('往up滑动');
+          //$('.fa-arrow-circle-up').show()
+              
+        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY>0){
+            console.log('往down滑动');
+            //$('.fa-arrow-circle-up').show()
+            
+        }
+      })
+        $('#home').on('mouseover','.box-item',function(){
+          $(this).find('.overlay').slideDown(345)
+          $(this).find('.item-img').css({'opacity':'0.6'})
+        }).on('mouseleave','.box-item',function(){
+          $(this).find('.overlay').fadeOut(345)
+          $(this).find('.item-img').css({'opacity':'1'})
+        })
+        $('#myModal').on('click','.morePapers',function(){
+          var blockType = $(this).attr('data-blockType')
+          getMorePapers(blockType)
+        })
+
+        $('#home').on('click','.box-item',function(){
+          var blockType = $(this).attr('data-type')
+          var currentBlock = blockType.split(' ').join('_')
+          if(defaultBlock != currentBlock){
+            moreTimes = 0
+            defaultBlock = currentBlock
+          }
+          // }else{
+          //   if(moreTimes >=1){
+          //     $('#myModal').modal('show')
+          //     return false
+          //   }
+          // }
+          getMorePapers(blockType) 
+          })
+    })
+  </script>
+</body>
+</html>

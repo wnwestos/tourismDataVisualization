@@ -20,5 +20,4 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='home'),
     path('home/', views.IndexView.as_view(), name='home'),
     path('go/', include('base.urls')),
-
 ]
