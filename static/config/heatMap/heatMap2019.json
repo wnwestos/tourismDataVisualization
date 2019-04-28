@@ -13,7 +13,7 @@
     },
     {  
        "name":"舟山",
-       "value":12
+       "value":56
     },
     {  
        "name":"齐齐哈尔",
@@ -29,7 +29,7 @@
     },
     {  
        "name":"青岛",
-       "value":18
+       "value":118
     },
     {  
        "name":"乳山",
@@ -37,7 +37,7 @@
     },
     {  
        "name":"金昌",
-       "value":19
+       "value":39
     },
     {  
        "name":"泉州",
@@ -49,7 +49,7 @@
     },
     {  
        "name":"日照",
-       "value":21
+       "value":45
     },
     {  
        "name":"胶南",
@@ -61,7 +61,7 @@
     },
     {  
        "name":"拉萨",
-       "value":24
+       "value":56
     },
     {  
        "name":"云浮",
@@ -77,7 +77,7 @@
     },
     {  
        "name":"上海",
-       "value":25
+       "value":155
     },
     {  
        "name":"攀枝花",
@@ -93,7 +93,7 @@
     },
     {  
        "name":"厦门",
-       "value":26
+       "value":146
     },
     {  
        "name":"汕尾",
@@ -105,7 +105,7 @@
     },
     {  
        "name":"丹东",
-       "value":27
+       "value":37
     },
     {  
        "name":"太仓",
@@ -117,11 +117,11 @@
     },
     {  
        "name":"烟台",
-       "value":28
+       "value":68
     },
     {  
        "name":"福州",
-       "value":29
+       "value":119
     },
     {  
        "name":"瓦房店",
@@ -137,11 +137,11 @@
     },
     {  
        "name":"玉溪",
-       "value":31
+       "value":61
     },
     {  
        "name":"张家口",
-       "value":31
+       "value":81
     },
     {  
        "name":"阳泉",
@@ -157,15 +157,15 @@
     },
     {  
        "name":"汕头",
-       "value":32
+       "value":52
     },
     {  
        "name":"昆山",
-       "value":33
+       "value":63
     },
     {  
        "name":"宁波",
-       "value":33
+       "value":133
     },
     {  
        "name":"湛江",
@@ -181,11 +181,11 @@
     },
     {  
        "name":"连云港",
-       "value":35
+       "value":98
     },
     {  
        "name":"葫芦岛",
-       "value":35
+       "value":65
     },
     {  
        "name":"常熟",
@@ -193,7 +193,7 @@
     },
     {  
        "name":"东莞",
-       "value":36
+       "value":106
     },
     {  
        "name":"河源",
@@ -213,11 +213,11 @@
     },
     {  
        "name":"营口",
-       "value":37
+       "value":98
     },
     {  
        "name":"惠州",
-       "value":37
+       "value":100
     },
     {  
        "name":"江阴",
@@ -237,11 +237,11 @@
     },
     {  
        "name":"广州",
-       "value":38
+       "value":138
     },
     {  
        "name":"延安",
-       "value":38
+       "value":68
     },
     {  
        "name":"太原",
@@ -257,7 +257,7 @@
     },
     {  
        "name":"昆明",
-       "value":39
+       "value":139
     },
     {  
        "name":"寿光",
@@ -273,11 +273,11 @@
     },
     {  
        "name":"深圳",
-       "value":41
+       "value":141
     },
     {  
        "name":"珠海",
-       "value":42
+       "value":92
     },
     {  
        "name":"宿迁",
@@ -285,7 +285,7 @@
     },
     {  
        "name":"咸阳",
-       "value":43
+       "value":93
     },
     {  
        "name":"铜川",
@@ -301,7 +301,7 @@
     },
     {  
        "name":"海口",
-       "value":44
+       "value":94
     },
     {  
        "name":"江门",
@@ -317,7 +317,7 @@
     },
     {  
        "name":"大连",
-       "value":47
+       "value":87
     },
     {  
        "name":"临汾",
@@ -333,11 +333,11 @@
     },
     {  
        "name":"沈阳",
-       "value":50
+       "value":99
     },
     {  
        "name":"苏州",
-       "value":50
+       "value":112
     },
     {  
        "name":"茂名",
@@ -345,11 +345,11 @@
     },
     {  
        "name":"嘉兴",
-       "value":51
+       "value":98
     },
     {  
        "name":"长春",
-       "value":51
+       "value":90
     },
     {  
        "name":"胶州",
@@ -357,7 +357,7 @@
     },
     {  
        "name":"银川",
-       "value":52
+       "value":78
     },
     {  
        "name":"张家港",
@@ -373,7 +373,7 @@
     },
     {  
        "name":"南昌",
-       "value":54
+       "value":66
     },
     {  
        "name":"柳州",
@@ -381,15 +381,15 @@
     },
     {  
        "name":"三亚",
-       "value":54
+       "value":154
     },
     {  
        "name":"自贡",
-       "value":56
+       "value":76
     },
     {  
        "name":"吉林",
-       "value":56
+       "value":66
     },
     {  
        "name":"阳江",
@@ -401,7 +401,7 @@
     },
     {  
        "name":"西宁",
-       "value":57
+       "value":106
     },
     {  
        "name":"宜宾",
@@ -409,11 +409,11 @@
     },
     {  
        "name":"呼和浩特",
-       "value":58
+       "value":76
     },
     {  
        "name":"成都",
-       "value":58
+       "value":168
     },
     {  
        "name":"大同",
@@ -425,15 +425,15 @@
     },
     {  
        "name":"桂林",
-       "value":59
+       "value":119
     },
     {  
        "name":"张家界",
-       "value":59
+       "value":159
     },
     {  
        "name":"宜兴",
-       "value":59
+       "value":109
     },
     {  
        "name":"北海",
@@ -441,7 +441,7 @@
     },
     {  
        "name":"西安",
-       "value":61
+       "value":161
     },
     {  
        "name":"金坛",
@@ -461,31 +461,31 @@
     },
     {  
        "name":"绍兴",
-       "value":63
+       "value":83
     },
     {  
        "name":"扬州",
-       "value":64
+       "value":134
     },
     {  
        "name":"常州",
-       "value":64
+       "value":94
     },
     {  
        "name":"潍坊",
-       "value":65
+       "value":85
     },
     {  
        "name":"重庆",
-       "value":66
+       "value":156
     },
     {  
        "name":"台州",
-       "value":67
+       "value":77
     },
     {  
        "name":"南京",
-       "value":67
+       "value":123
     },
     {  
        "name":"滨州",
@@ -493,11 +493,11 @@
     },
     {  
        "name":"贵阳",
-       "value":71
+       "value":89
     },
     {  
        "name":"无锡",
-       "value":71
+       "value":79
     },
     {  
        "name":"本溪",
@@ -509,7 +509,7 @@
     },
     {  
        "name":"渭南",
-       "value":72
+       "value":32
     },
     {  
        "name":"马鞍山",
@@ -517,7 +517,7 @@
     },
     {  
        "name":"宝鸡",
-       "value":72
+       "value":42
     },
     {  
        "name":"焦作",
@@ -529,7 +529,7 @@
     },
     {  
        "name":"北京",
-       "value":79
+       "value":155
     },
     {  
        "name":"徐州",
@@ -557,7 +557,7 @@
     },
     {  
        "name":"杭州",
-       "value":84
+       "value":184
     },
     {  
        "name":"淄博",
@@ -581,11 +581,11 @@
     },
     {  
        "name":"开封",
-       "value":90
+       "value":100
     },
     {  
        "name":"济南",
-       "value":92
+       "value":112
     },
     {  
        "name":"德阳",
@@ -609,7 +609,7 @@
     },
     {  
        "name":"兰州",
-       "value":99
+       "value":101
     },
     {  
        "name":"沧州",
@@ -625,7 +625,7 @@
     },
     {  
        "name":"天津",
-       "value":105
+       "value":125
     },
     {  
        "name":"富阳",
@@ -633,15 +633,15 @@
     },
     {  
        "name":"泰安",
-       "value":112
+       "value":109
     },
     {  
        "name":"诸暨",
-       "value":112
+       "value":42
     },
     {  
        "name":"郑州",
-       "value":113
+       "value":100
     },
     {  
        "name":"哈尔滨",
@@ -649,43 +649,43 @@
     },
     {  
        "name":"聊城",
-       "value":116
+       "value":46
     },
     {  
        "name":"芜湖",
-       "value":117
+       "value":57
     },
     {  
        "name":"唐山",
-       "value":119
+       "value":79
     },
     {  
        "name":"平顶山",
-       "value":119
+       "value":59
     },
     {  
        "name":"邢台",
-       "value":119
+       "value":90
     },
     {  
        "name":"德州",
-       "value":120
+       "value":100
     },
     {  
        "name":"济宁",
-       "value":120
+       "value":20
     },
     {  
        "name":"荆州",
-       "value":127
+       "value":88
     },
     {  
        "name":"宜昌",
-       "value":130
+       "value":110
     },
     {  
        "name":"义乌",
-       "value":132
+       "value":102
     },
     {  
        "name":"丽水",
@@ -693,70 +693,70 @@
     },
     {  
        "name":"洛阳",
-       "value":134
+       "value":89
     },
     {  
        "name":"秦皇岛",
-       "value":136
+       "value":106
     },
     {  
        "name":"株洲",
-       "value":143
+       "value":113
     },
     {  
        "name":"石家庄",
-       "value":147
+       "value":78
     },
     {  
        "name":"莱芜",
-       "value":148
+       "value":65
     },
     {  
        "name":"常德",
-       "value":152
+       "value":102
     },
     {  
        "name":"保定",
-       "value":153
+       "value":98
     },
     {  
        "name":"湘潭",
-       "value":154
+       "value":100
     },
     {  
        "name":"金华",
-       "value":157
+       "value":103
     },
     {  
        "name":"岳阳",
-       "value":169
+       "value":89
     },
     {  
        "name":"长沙",
-       "value":175
+       "value":145
     },
     {  
        "name":"衢州",
-       "value":177
+       "value":77
     },
     {  
        "name":"廊坊",
-       "value":193
+       "value":56
     },
     {  
        "name":"菏泽",
-       "value":194
+       "value":69
     },
     {  
        "name":"合肥",
-       "value":229
+       "value":44
     },
     {  
        "name":"武汉",
-       "value":273
+       "value":134
     },
     {  
        "name":"大庆",
-       "value":279
+       "value":45
     }
  ]

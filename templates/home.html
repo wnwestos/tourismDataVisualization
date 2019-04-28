@@ -491,196 +491,210 @@
                 return res;
             };
 
-            option = {
-                title: {
-                    text: thisYear + '年全国旅游大数据热点图',
-                    left: 'center'
-                },
-                tooltip : {
-                    trigger: 'item'
-                },
-                bmap: {
-                    center: [104.114129, 37.550339],
-                    zoom: 5.5,
-                    roam: true,
-                    mapStyle: {
-                        styleJson: [{
-                            'featureType': 'water',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#d1d1d1'
-                            }
-                        }, {
-                            'featureType': 'land',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#f3f3f3'
-                            }
-                        }, {
-                            'featureType': 'railway',
-                            'elementType': 'all',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'highway',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#fdfdfd'
-                            }
-                        }, {
-                            'featureType': 'highway',
-                            'elementType': 'labels',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'arterial',
-                            'elementType': 'geometry',
-                            'stylers': {
-                                'color': '#fefefe'
-                            }
-                        }, {
-                            'featureType': 'arterial',
-                            'elementType': 'geometry.fill',
-                            'stylers': {
-                                'color': '#fefefe'
-                            }
-                        }, {
-                            'featureType': 'poi',
-                            'elementType': 'all',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'green',
-                            'elementType': 'all',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'subway',
-                            'elementType': 'all',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'manmade',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#d1d1d1'
-                            }
-                        }, {
-                            'featureType': 'local',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#d1d1d1'
-                            }
-                        }, {
-                            'featureType': 'arterial',
-                            'elementType': 'labels',
-                            'stylers': {
-                                'visibility': 'off'
-                            }
-                        }, {
-                            'featureType': 'boundary',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#fefefe'
-                            }
-                        }, {
-                            'featureType': 'building',
-                            'elementType': 'all',
-                            'stylers': {
-                                'color': '#d1d1d1'
-                            }
-                        }, {
-                            'featureType': 'label',
-                            'elementType': 'labels.text.fill',
-                            'stylers': {
-                                'color': '#999999'
-                            }
-                        }]
-                    }
-                },
-                series : [
-                    {
-                        name: '旅游热度',
-                        type: 'scatter',
-                        coordinateSystem: 'bmap',
-                        data: convertData(data).slice(6),
-                        tooltip : {             // Series config.
-                            trigger: 'item',
-                            formatter: function(params){
-                                let str = '<p align="center">[ '+params['name']+' ]</p>'
-                                str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
-                                return str
+            let url = '/static/config/heatPoint/heatPoint'+thisYear+'.json'
+            $.ajax({
+                type:"GET",
+                url: url,
+                data: null,
+                dataType:'json',
+                cache:false,
+                success: function(retData) {
+                    option = {
+                        title: {
+                            text: thisYear + '年全国旅游大数据热点图',
+                            left: 'center'
+                        },
+                        tooltip : {
+                            trigger: 'item'
+                        },
+                        bmap: {
+                            center: [104.114129, 37.550339],
+                            zoom: 5.5,
+                            roam: true,
+                            mapStyle: {
+                                styleJson: [{
+                                    'featureType': 'water',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#d1d1d1'
+                                    }
+                                }, {
+                                    'featureType': 'land',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#f3f3f3'
+                                    }
+                                }, {
+                                    'featureType': 'railway',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'highway',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#fdfdfd'
+                                    }
+                                }, {
+                                    'featureType': 'highway',
+                                    'elementType': 'labels',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'arterial',
+                                    'elementType': 'geometry',
+                                    'stylers': {
+                                        'color': '#fefefe'
+                                    }
+                                }, {
+                                    'featureType': 'arterial',
+                                    'elementType': 'geometry.fill',
+                                    'stylers': {
+                                        'color': '#fefefe'
+                                    }
+                                }, {
+                                    'featureType': 'poi',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'green',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'subway',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'manmade',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#d1d1d1'
+                                    }
+                                }, {
+                                    'featureType': 'local',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#d1d1d1'
+                                    }
+                                }, {
+                                    'featureType': 'arterial',
+                                    'elementType': 'labels',
+                                    'stylers': {
+                                        'visibility': 'off'
+                                    }
+                                }, {
+                                    'featureType': 'boundary',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#fefefe'
+                                    }
+                                }, {
+                                    'featureType': 'building',
+                                    'elementType': 'all',
+                                    'stylers': {
+                                        'color': '#d1d1d1'
+                                    }
+                                }, {
+                                    'featureType': 'label',
+                                    'elementType': 'labels.text.fill',
+                                    'stylers': {
+                                        'color': '#999999'
+                                    }
+                                }]
                             }
                         },
-                        symbolSize: function (val) {
-                            return val[2] / 10;
-                        },
-                        label: {
-                            normal: {
-                                formatter: '{b}',
-                                position: 'right',
-                                show: false
+                        series : [
+                            {
+                                name: '旅游热度',
+                                type: 'scatter',
+                                coordinateSystem: 'bmap',
+                                data: convertData(retData).slice(6),
+                                tooltip : {             // Series config.
+                                    trigger: 'item',
+                                    formatter: function(params){
+                                        let str = '<p align="center">[ '+params['name']+' ]</p>'
+                                        str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
+                                        str += '<p>旅游指数: '+params['value'][2]+'</p>'
+                                        return str
+                                    }
+                                },
+                                symbolSize: function (val) {
+                                    return val[2] / 10;
+                                },
+                                label: {
+                                    normal: {
+                                        formatter: '{b}',
+                                        position: 'right',
+                                        show: false
+                                    },
+                                    emphasis: {
+                                        show: true
+                                    }
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        color: 'purple'
+                                    }
+                                }
                             },
-                            emphasis: {
-                                show: true
+                            {
+                                name: 'Top 5',
+                                type: 'effectScatter',
+                                coordinateSystem: 'bmap',
+                                data: convertData(retData).slice(0, 6),
+                                tooltip : {             // Series config.
+                                    trigger: 'item',
+                                    formatter: function(params){
+                                        let str = '<p align="center">[ '+params['name']+' ]</p>'
+                                        str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
+                                        str += '<p>旅游指数: '+params['value'][2]+'</p>'
+                                        return str
+                                    }
+                                },
+                                symbolSize: function (val) {
+                                    return val[2] / 10;
+                                },
+                                showEffectOn: 'render',
+                                rippleEffect: {
+                                    brushType: 'stroke'
+                                },
+                                hoverAnimation: true,
+                                label: {
+                                    normal: {
+                                        formatter: '{b}',
+                                        position: 'right',
+                                        show: true
+                                    }
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        color: 'purple',
+                                        shadowBlur: 10,
+                                        shadowColor: '#333'
+                                    }
+                                },
+                                zlevel: 1
                             }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: 'purple'
-                            }
-                        }
-                    },
-                    {
-                        name: 'Top 5',
-                        type: 'effectScatter',
-                        coordinateSystem: 'bmap',
-                        data: convertData(data).slice(0, 6),
-                        tooltip : {             // Series config.
-                            trigger: 'item',
-                            formatter: function(params){
-                                let str = '<p align="center">[ '+params['name']+' ]</p>'
-                                str += '<p>热度排名: '+(params['value'][3]+1)+'</p>'
-                                str += '<p>旅游指数: '+params['value'][2]+'</p>'
-                                return str
-                            }
-                        },
-                        symbolSize: function (val) {
-                            return val[2] / 10;
-                        },
-                        showEffectOn: 'render',
-                        rippleEffect: {
-                            brushType: 'stroke'
-                        },
-                        hoverAnimation: true,
-                        label: {
-                            normal: {
-                                formatter: '{b}',
-                                position: 'right',
-                                show: true
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: 'purple',
-                                shadowBlur: 10,
-                                shadowColor: '#333'
-                            }
-                        },
-                        zlevel: 1
+                        ]
+                    };;
+                    if (option && typeof option === "object") {
+                        myChart.setOption(option, true);
+                        
                     }
-                ]
-            };;
-            if (option && typeof option === "object") {
-                myChart.setOption(option, true);
-                
-            }
+                        },
+                error: function(ret) {
+                    console.log(ret)
+                }
+            })
+
             function refreshData(data){
                 if(!myChart){
                     return;
@@ -785,7 +799,7 @@
                         error: function(ret) {
                             console.log(ret)
                         }
-                })
+                    })
             })
             })
     </script>
