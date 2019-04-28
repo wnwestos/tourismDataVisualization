@@ -17,7 +17,7 @@ class TrackView(View):
 class HeatMapView(View):
     @method_decorator(login_required)
     def get(self, request):
-        return render(request, 'heatandmap.html')
+        return render(request, 'heatmap.html')
 
 class CharacteristicView(View):
     @method_decorator(login_required)

@@ -260,12 +260,12 @@ pre {
 
 .main-nav .but-link > a {
     color: #ddd !important;
-    line-height: 26px;
+    line-height: 36px;
+    font-size: 1.45em;
 }
 
 .main-nav .but-link > a:hover {
-    font-size: 1.1em;
-    color: #fff !important;
+    color: #8effff !important;
 }
 
 #logoSvg{
