@@ -34,14 +34,17 @@
                                 <li class="but-link">
                                     <a href="/" class="fa fa-home" role="button"> Home</a>
                                 </li>
-                                <li class="but-link">
+                                <!-- <li class="but-link">
                                     <a href="/heatmap" class="fa fa-map-marker" role="button"> HeatMap</a>
-                                </li>
+                                </li> -->
                                 <li class="but-link">
                                     <a href="/track/" class="fa fa-shekel" role="button" aria-haspopup="true"> Track</a>
                                 </li>
                                 <li class="but-link">
                                     <a href="/characteristic/" class="fa fa-cubes" role="button" aria-haspopup="true"> Characteristic</a>
+                                </li>
+                                <li class="but-link">
+                                    <a href="/trend/" class="fa fa-line-chart" role="button" aria-haspopup="true"> Trend</a>
                                 </li>
                             </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -49,7 +52,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
                             </a>
-                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 100px;">
+                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 115px;">
                                 <li><a href="#setting"> Setting</a></li>
                                 <li><a href="{% url 'login' %}"> Logout</a></li>
                             </ul>
@@ -58,7 +61,16 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-       <div id="container" style="height: 100%; margin-top: -21px;"></div>
+        <div class="btn-group" data-toggle="buttons" style="position: fixed;z-index: 1;    margin-top: -23px;">
+            <label class="btn btn-primary switchMap" data="hangzhou">
+                杭州旅游步行热轨图
+            </label>
+            <label class="btn btn-primary switchMap" data="beijing">
+                北京旅游交通热轨图
+            </label>
+        </div>	
+       <div id="hanzhouTrack" style="height: 100%; margin-top: -21px;"></div>
+       <div id="beijingTrack" style="height: 100%; margin-top: -21px;"></div>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
@@ -71,56 +83,278 @@
        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
        <script type="text/javascript">
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-app.title = '热力图与百度地图扩展';
+        var dom = document.getElementById("hanzhouTrack");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        $.get('/static/config/tracks/hangzhou-tracks.json', function (data) {
 
-$.get('/static/config/tracks/hangzhou-tracks.json', function (data) {
-
-    var points = [].concat.apply([], data.map(function (track) {
-        return track.map(function (seg) {
-            return seg.coord.concat([1]);
-        });
-    }));
-    myChart.setOption(option = {
-        animation: false,
-        bmap: {
-            center: [120.13066322374, 30.240018034923],
-            zoom: 14,
-            roam: true
-        },
-        visualMap: {
-            show: false,
-            top: 'top',
-            min: 0,
-            max: 5,
-            seriesIndex: 0,
-            calculable: true,
-            inRange: {
-                color: ['blue', 'blue', 'green', 'yellow', 'red']
+            var points = [].concat.apply([], data.map(function (track) {
+                return track.map(function (seg) {
+                    return seg.coord.concat([1]);
+                });
+            }));
+            myChart.setOption(option = {
+                animation: false,
+                bmap: {
+                    center: [120.13066322374, 30.240018034923],
+                    zoom: 14,
+                    roam: true
+                },
+                visualMap: {
+                    show: false,
+                    top: 'top',
+                    min: 0,
+                    max: 5,
+                    seriesIndex: 0,
+                    calculable: true,
+                    inRange: {
+                        color: ['blue', 'blue', 'green', 'yellow', 'red']
+                    }
+                },
+                series: [{
+                    type: 'heatmap',
+                    coordinateSystem: 'bmap',
+                    data: points,
+                    pointSize: 5,
+                    blurSize: 6
+                }]
+            });
+            if (!app.inNode) {
+                // 添加百度地图插件
+                var bmap = myChart.getModel().getComponent('bmap').getBMap();
+                bmap.addControl(new BMap.MapTypeControl());
             }
-        },
-        series: [{
-            type: 'heatmap',
-            coordinateSystem: 'bmap',
-            data: points,
-            pointSize: 5,
-            blurSize: 6
-        }]
-    });
-    if (!app.inNode) {
-        // 添加百度地图插件
-        var bmap = myChart.getModel().getComponent('bmap').getBMap();
-        bmap.addControl(new BMap.MapTypeControl());
-    }
-    setTimeout(function(){$('#zoomer').prev('div').hide();$('#zoomer').next().next().hide()},1000)
-});
-;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
+            setTimeout(function(){$('#zoomer').prev('div').hide();$('#zoomer').next().next().hide()},1000)
+        });
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+        let beijingTrack = false
+        $('.switchMap').click(function(){
+            let target = $(this).attr('data')
+            if(target === 'hangzhou'){
+                $('#beijingTrack').fadeOut(321)
+                $('#hanzhouTrack').show(123)
+            }else{
+                if(!beijingTrack){
+                   
+                    let url = '/static/config/tracks/beijing-tracks.json'
+                    $.ajax({
+                        type:"GET",
+                        url: url,
+                        data: null,
+                        dataType:'json',
+                        cache:false,
+                        success: function(ret) {
+                            beijingTrack = true
+                            data = ret
+                            var dom1 = document.getElementById("beijingTrack");
+                            var myChart1 = echarts.init(dom1);
+                            var option1 = null;
+                            var hStep = 300 / (data.length - 1);
+                            var busLines = [].concat.apply([], data.map(function (busLine, idx) {
+                                    var prevPt;
+                                    var points = [];
+                                    for (var i = 0; i < busLine.length; i += 2) {
+                                        var pt = [busLine[i], busLine[i + 1]];
+                                        if (i > 0) {
+                                            pt = [
+                                                prevPt[0] + pt[0],
+                                                prevPt[1] + pt[1]
+                                            ];
+                                        }
+                                        prevPt = pt;
+
+                                        points.push([pt[0] / 1e4, pt[1] / 1e4]);
+                                    }
+                                    return {
+                                        coords: points,
+                                        lineStyle: {
+                                            normal: {
+                                                color: echarts.color.modifyHSL('#5A94DF', Math.round(hStep * idx))
+                                            }
+                                        }
+                                    };
+                                }));
+                                myChart1.setOption(option = {
+                                    bmap: {
+                                        center: [116.30, 39.92],
+                                        zoom: 11,
+                                        roam: true,
+                                        mapStyle: {
+                                        'styleJson': [
+                                            {
+                                            'featureType': 'water',
+                                            'elementType': 'all',
+                                            'stylers': {
+                                                'color': '#031628'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'land',
+                                            'elementType': 'geometry',
+                                            'stylers': {
+                                                'color': '#000102'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'highway',
+                                            'elementType': 'all',
+                                            'stylers': {
+                                                'visibility': 'off'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'arterial',
+                                            'elementType': 'geometry.fill',
+                                            'stylers': {
+                                                'color': '#000000'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'arterial',
+                                            'elementType': 'geometry.stroke',
+                                            'stylers': {
+                                                'color': '#0b3d51'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'local',
+                                            'elementType': 'geometry',
+                                            'stylers': {
+                                                'color': '#000000'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'railway',
+                                            'elementType': 'geometry.fill',
+                                            'stylers': {
+                                                'color': '#000000'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'railway',
+                                            'elementType': 'geometry.stroke',
+                                            'stylers': {
+                                                'color': '#08304b'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'subway',
+                                            'elementType': 'geometry',
+                                            'stylers': {
+                                                'lightness': -70
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'building',
+                                            'elementType': 'geometry.fill',
+                                            'stylers': {
+                                                'color': '#000000'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'all',
+                                            'elementType': 'labels.text.fill',
+                                            'stylers': {
+                                                'color': '#857f7f'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'all',
+                                            'elementType': 'labels.text.stroke',
+                                            'stylers': {
+                                                'color': '#000000'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'building',
+                                            'elementType': 'geometry',
+                                            'stylers': {
+                                                'color': '#022338'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'green',
+                                            'elementType': 'geometry',
+                                            'stylers': {
+                                                'color': '#062032'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'boundary',
+                                            'elementType': 'all',
+                                            'stylers': {
+                                                'color': '#465b6c'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'manmade',
+                                            'elementType': 'all',
+                                            'stylers': {
+                                                'color': '#022338'
+                                            }
+                                            },
+                                            {
+                                            'featureType': 'label',
+                                            'elementType': 'all',
+                                            'stylers': {
+                                                'visibility': 'off'
+                                            }
+                                            }
+                                        ]
+                                        }
+                                    },
+                                    series: [{
+                                        type: 'lines',
+                                        coordinateSystem: 'bmap',
+                                        polyline: true,
+                                        data: busLines,
+                                        silent: true,
+                                        lineStyle: {
+                                            normal: {
+                                                // color: '#c23531',
+                                                // color: 'rgb(200, 35, 45)',
+                                                opacity: 0.2,
+                                                width: 1
+                                            }
+                                        },
+                                        progressiveThreshold: 500,
+                                        progressive: 200
+                                    }, {
+                                        type: 'lines',
+                                        coordinateSystem: 'bmap',
+                                        polyline: true,
+                                        data: busLines,
+                                        lineStyle: {
+                                            normal: {
+                                                width: 0
+                                            }
+                                        },
+                                        effect: {
+                                            constantSpeed: 20,
+                                            show: true,
+                                            trailLength: 0.1,
+                                            symbolSize: 1.5
+                                        },
+                                        zlevel: 1
+                                    }]
+                                });
+                            if (option1 && typeof option1 === "object") {
+                                myChart1.setOption(option1, true);
+                            }
+                        },
+                        error: function(ret) {
+                            console.log(ret)
+                        }
+                    })
+                }
+                $('#hanzhouTrack').fadeOut(321)
+                $('#beijingTrack').show(123)
+            }
+        })
        </script>
    </body>
 </html>

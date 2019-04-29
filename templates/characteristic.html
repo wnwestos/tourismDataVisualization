@@ -34,14 +34,17 @@
                                 <li class="but-link">
                                     <a href="/" class="fa fa-home" role="button"> Home</a>
                                 </li>
-                                <li class="but-link">
+                                <!-- <li class="but-link">
                                     <a href="/heatmap" class="fa fa-map-marker" role="button"> HeatMap</a>
-                                </li>
+                                </li> -->
                                 <li class="but-link">
                                     <a href="/track/" class="fa fa-shekel" role="button" aria-haspopup="true"> Track</a>
                                 </li>
                                 <li class="but-link">
                                     <a href="/characteristic/" class="fa fa-cubes" role="button" aria-haspopup="true"> Characteristic</a>
+                                </li>
+                                <li class="but-link">
+                                    <a href="/trend/" class="fa fa-line-chart" role="button" aria-haspopup="true"> Trend</a>
                                 </li>
                             </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -49,7 +52,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
                             </a>
-                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 100px;">
+                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 115px;">
                                     <li><a href="#setting"> Setting</a></li>
                                     <li><a href="{% url 'login' %}"> Logout</a></li>
                             </ul>

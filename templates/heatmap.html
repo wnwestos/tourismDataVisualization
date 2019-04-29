@@ -49,7 +49,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
                             </a>
-                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 100px;">
+                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 115px;">
                                     <li><a href="#setting"> Setting</a></li>
                                     <li><a href="{% url 'login' %}"> Logout</a></li>
                             </ul>
@@ -299,17 +299,16 @@
                 }
                 return res;
             };
-            let url = '/static/config/heatMap/heatMap2019.json'
                     $.ajax({
                         type:"GET",
-                        url: url,
+                        url: url = '/static/config/heatMap/heatMap'+thisYear+'.json',
                         data: null,
                         dataType:'json',
                         cache:false,
                         success: function(retData) {
                             option = {
                                 title: {
-                                    text: thisYear+'全国旅游大数据热图',
+                                    text: thisYear+'全国旅游大数据区域热图',
                                     left: 'center',
                                     textStyle: {
                                         color: '#fff'
@@ -371,7 +370,7 @@
                 }
                 var option = myChart.getOption();
                 option.title =  {
-                    text: thisYear + '年全国旅游大数据热图',
+                    text: thisYear + '年全国旅游大数据区域热图',
                     left: 'center'
                 }
                 option.series =  [{
@@ -405,6 +404,7 @@
                     })
             })
             })
+            
     </script>
    </body>
 </html>

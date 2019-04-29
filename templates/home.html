@@ -34,14 +34,17 @@
                         <li class="but-link">
                             <a href="/" class="fa fa-home" role="button"> Home</a>
                         </li>
-                        <li class="but-link">
+                        <!-- <li class="but-link">
                             <a href="/heatmap" class="fa fa-map-marker" role="button"> HeatMap</a>
-                        </li>
+                        </li> -->
                         <li class="but-link">
                             <a href="/track/" class="fa fa-shekel" role="button" aria-haspopup="true"> Track</a>
                         </li>
                         <li class="but-link">
                             <a href="/characteristic/" class="fa fa-cubes" role="button" aria-haspopup="true"> Characteristic</a>
+                        </li>
+                        <li class="but-link">
+                            <a href="/trend/" class="fa fa-line-chart" role="button" aria-haspopup="true"> Trend</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -49,7 +52,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <img id="user_avatar" src="{% static 'images/default.png' %}" style="margin-top:-6px;width:26px;height:26px">Admin
                             </a>
-                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 100px;">
+                            <ul class="dropdown-menu" id="userDropList"  style="min-width: 115px;">
                                     <li><a href="#setting"> Setting</a></li>
                                     <li><a href="{% url 'login' %}"> Logout</a></li>
                             </ul>
@@ -58,7 +61,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <p style="position:fixed;bottom:10px;z-index:111;right:9px;">
+        <p style="position:fixed;margin-top: 1%;z-index:1;left:2%;">
             旅游年份：<select id="tourismYear">
                 <option value="2019" selected>2019</option>
                 <option value="2018" >2018</option>
@@ -72,7 +75,16 @@
                 <option value="2010" >2010</option>
             </select>
         </p>
-       <div id="container" style="height: 100%;margin-top: -23px;"></div>
+        <div class="btn-group" data-toggle="buttons" style="position: fixed;z-index: 1; margin-top: -23px;">
+            <label class="btn btn-primary switchMap" data="heatPoint">
+                景点热度图
+            </label>
+            <label class="btn btn-primary switchMap" data="heatMap">
+                旅游区域热图
+            </label>
+        </div>	
+       <div id="heatPoint" style="height: 100%;margin-top: -23px;"></div>
+       <div id="heatMap" style="height: 100%;margin-top: -23px;"></div>
        <script type="text/javascript" src="{% static 'map/echarts.min.js' %}"></script>
        <script type="text/javascript" src="{% static 'map/echarts-gl.min.js' %}"></script>
        <script type="text/javascript" src="{% static 'map/ecStat.min.js' %}"></script>
@@ -85,202 +97,15 @@
        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
        <script type="text/javascript">
-            var dom = document.getElementById("container");
+            var dom = document.getElementById("heatPoint");
             var myChart = echarts.init(dom);
             var thisYear = 2019
             option = null;
-            var data = [
-                {name: '海门', value: 9},
-                {name: '鄂尔多斯', value: 12},
-                {name: '招远', value: 12},
-                {name: '舟山', value: 12},
-                {name: '齐齐哈尔', value: 14},
-                {name: '盐城', value: 15},
-                {name: '赤峰', value: 16},
-                {name: '青岛', value: 168},
-                {name: '乳山', value: 18},
-                {name: '金昌', value: 19},
-                {name: '泉州', value: 21},
-                {name: '莱西', value: 21},
-                {name: '日照', value: 21},
-                {name: '胶南', value: 22},
-                {name: '南通', value: 23},
-                {name: '拉萨', value: 124},
-                {name: '云浮', value: 24},
-                {name: '梅州', value: 25},
-                {name: '文登', value: 25},
-                {name: '上海', value: 175},
-                {name: '攀枝花', value: 25},
-                {name: '威海', value: 25},
-                {name: '承德', value: 25},
-                {name: '厦门', value: 156},
-                {name: '汕尾', value: 26},
-                {name: '潮州', value: 26},
-                {name: '丹东', value: 27},
-                {name: '太仓', value: 27},
-                {name: '曲靖', value: 27},
-                {name: '烟台', value: 28},
-                {name: '福州', value: 29},
-                {name: '瓦房店', value: 30},
-                {name: '即墨', value: 30},
-                {name: '抚顺', value: 31},
-                {name: '玉溪', value: 31},
-                {name: '张家口', value: 31},
-                {name: '阳泉', value: 31},
-                {name: '莱州', value: 32},
-                {name: '湖州', value: 32},
-                {name: '汕头', value: 32},
-                {name: '昆山', value: 33},
-                {name: '宁波', value: 133},
-                {name: '湛江', value: 33},
-                {name: '揭阳', value: 34},
-                {name: '荣成', value: 34},
-                {name: '连云港', value: 35},
-                {name: '葫芦岛', value: 35},
-                {name: '常熟', value: 36},
-                {name: '东莞', value: 136},
-                {name: '河源', value: 36},
-                {name: '淮安', value: 36},
-                {name: '泰州', value: 36},
-                {name: '南宁', value: 37},
-                {name: '营口', value: 37},
-                {name: '惠州', value: 37},
-                {name: '江阴', value: 37},
-                {name: '蓬莱', value: 37},
-                {name: '韶关', value: 38},
-                {name: '嘉峪关', value: 38},
-                {name: '广州', value: 138},
-                {name: '延安', value: 38},
-                {name: '太原', value: 39},
-                {name: '清远', value: 39},
-                {name: '中山', value: 39},
-                {name: '昆明', value: 159},
-                {name: '寿光', value: 40},
-                {name: '盘锦', value: 40},
-                {name: '长治', value: 41},
-                {name: '深圳', value: 91},
-                {name: '珠海', value: 42},
-                {name: '宿迁', value: 43},
-                {name: '咸阳', value: 43},
-                {name: '铜川', value: 44},
-                {name: '平度', value: 44},
-                {name: '佛山', value: 44},
-                {name: '海口', value: 44},
-                {name: '江门', value: 45},
-                {name: '章丘', value: 45},
-                {name: '肇庆', value: 46},
-                {name: '大连', value: 47},
-                {name: '临汾', value: 47},
-                {name: '吴江', value: 47},
-                {name: '石嘴山', value: 49},
-                {name: '沈阳', value: 50},
-                {name: '苏州', value: 150},
-                {name: '茂名', value: 50},
-                {name: '嘉兴', value: 51},
-                {name: '长春', value: 51},
-                {name: '胶州', value: 52},
-                {name: '银川', value: 52},
-                {name: '张家港', value: 52},
-                {name: '三门峡', value: 53},
-                {name: '锦州', value: 54},
-                {name: '南昌', value: 54},
-                {name: '柳州', value: 54},
-                {name: '三亚', value: 54},
-                {name: '自贡', value: 56},
-                {name: '吉林', value: 56},
-                {name: '阳江', value: 57},
-                {name: '泸州', value: 57},
-                {name: '西宁', value: 127},
-                {name: '宜宾', value: 58},
-                {name: '呼和浩特', value: 58},
-                {name: '成都', value: 178},
-                {name: '大同', value: 58},
-                {name: '镇江', value: 59},
-                {name: '桂林', value: 59},
-                {name: '张家界', value: 59},
-                {name: '宜兴', value: 59},
-                {name: '北海', value: 60},
-                {name: '西安', value: 161},
-                {name: '金坛', value: 62},
-                {name: '东营', value: 62},
-                {name: '牡丹江', value: 63},
-                {name: '遵义', value: 63},
-                {name: '绍兴', value: 63},
-                {name: '扬州', value: 144},
-                {name: '常州', value: 64},
-                {name: '潍坊', value: 65},
-                {name: '重庆', value: 166},
-                {name: '台州', value: 67},
-                {name: '南京', value: 67},
-                {name: '滨州', value: 70},
-                {name: '贵阳', value: 71},
-                {name: '无锡', value: 71},
-                {name: '本溪', value: 71},
-                {name: '克拉玛依', value: 72},
-                {name: '渭南', value: 72},
-                {name: '马鞍山', value: 72},
-                {name: '宝鸡', value: 72},
-                {name: '焦作', value: 75},
-                {name: '句容', value: 75},
-                {name: '北京', value: 166},
-                {name: '徐州', value: 79},
-                {name: '衡水', value: 80},
-                {name: '包头', value: 80},
-                {name: '绵阳', value: 80},
-                {name: '乌鲁木齐', value: 84},
-                {name: '枣庄', value: 84},
-                {name: '杭州', value: 184},
-                {name: '淄博', value: 85},
-                {name: '鞍山', value: 86},
-                {name: '溧阳', value: 86},
-                {name: '库尔勒', value: 86},
-                {name: '安阳', value: 90},
-                {name: '开封', value: 90},
-                {name: '济南', value: 92},
-                {name: '德阳', value: 93},
-                {name: '温州', value: 95},
-                {name: '九江', value: 96},
-                {name: '邯郸', value: 98},
-                {name: '临安', value: 99},
-                {name: '兰州', value: 139},
-                {name: '沧州', value: 100},
-                {name: '临沂', value: 103},
-                {name: '南充', value: 104},
-                {name: '天津', value: 105},
-                {name: '富阳', value: 106},
-                {name: '泰安', value: 112},
-                {name: '诸暨', value: 112},
-                {name: '郑州', value: 113},
-                {name: '哈尔滨', value: 114},
-                {name: '聊城', value: 116},
-                {name: '芜湖', value: 117},
-                {name: '唐山', value: 119},
-                {name: '平顶山', value: 119},
-                {name: '邢台', value: 119},
-                {name: '德州', value: 120},
-                {name: '济宁', value: 120},
-                {name: '荆州', value: 127},
-                {name: '宜昌', value: 130},
-                {name: '义乌', value: 132},
-                {name: '丽水', value: 133},
-                {name: '洛阳', value: 134},
-                {name: '秦皇岛', value: 136},
-                {name: '株洲', value: 43},
-                {name: '石家庄', value: 67},
-                {name: '莱芜', value: 48},
-                {name: '常德', value: 112},
-                {name: '保定', value: 63},
-                {name: '湘潭', value: 114},
-                {name: '金华', value: 117},
-                {name: '岳阳', value: 109},
-                {name: '长沙', value: 125},
-                {name: '衢州', value: 17},
-                {name: '廊坊', value: 14},
-                {name: '菏泽', value: 12},
-                {name: '合肥', value: 65},
-                {name: '武汉', value: 135},
-                {name: '大庆', value: 9}
-            ];
+
+            var dom1 = document.getElementById("heatMap");
+            var myChart1 = echarts.init(dom1);
+            option1 = null;
+
             var geoCoordMap = {
                 '海门':[121.15,31.89],
                 '鄂尔多斯':[109.781327,39.608266],
@@ -491,10 +316,9 @@
                 return res;
             };
 
-            let url = '/static/config/heatPoint/heatPoint'+thisYear+'.json'
             $.ajax({
                 type:"GET",
-                url: url,
+                url: '/static/config/heatPoint/heatPoint'+thisYear+'.json',
                 data: null,
                 dataType:'json',
                 cache:false,
@@ -695,6 +519,71 @@
                 }
             })
 
+            $.ajax({
+                        type:"GET",
+                        url: url = '/static/config/heatMap/heatMap'+thisYear+'.json',
+                        data: null,
+                        dataType:'json',
+                        cache:false,
+                        success: function(retData) {
+                            option1 = {
+                                title: {
+                                    text: thisYear+'全国旅游大数据区域热图',
+                                    left: 'center',
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },
+                                tooltip : {
+                                        trigger: 'item'
+                                    },
+                                backgroundColor: '#4f406f',
+                                visualMap: {
+                                    min: 0,
+                                    max: 300,
+                                    splitNumber: 4,
+                                    inRange: {
+                                        color: ['#d6aa9e','#e06a62','#27caef','#00c385'].reverse()
+                                    },
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },
+                                geo: {
+                                    map: 'china',
+                                    label: {
+                                        emphasis: {
+                                            show: true,
+                                            color: '#fff',
+                                        }
+                                    },
+                                    roam: true,
+                                    itemStyle: {
+                                        normal: {
+                                            areaColor: '#3e3e40',
+                                            borderColor: '#111'
+                                        },
+                                        emphasis: {
+                                            areaColor: '#4e4d50'
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    name: 'AQI',
+                                    type: 'heatmap',
+                                    coordinateSystem: 'geo',
+                                    data: convertData(retData)
+                                }]
+                            };
+                            if (option1 && typeof option1 === "object") {
+                                myChart1.setOption(option1, true);
+                            }
+                        },
+                        error: function(ret) {
+                            console.log(ret)
+                        }
+                    })
+
             function refreshData(data){
                 if(!myChart){
                     return;
@@ -779,16 +668,34 @@
                 ]
                 myChart.setOption(option);    
             }
+
+            function refreshMapData(data){
+                if(!myChart1){
+                    return;
+                }
+                var option1 = myChart.getOption();
+                option1.title =  {
+                    text: thisYear + '年全国旅游大数据区域热图',
+                    left: 'center'
+                }
+                option1.series =  [{
+                name: 'AQI',
+                type: 'heatmap',
+                coordinateSystem: 'geo',
+                data: convertData(data)
+            }]
+                myChart1.setOption(option1);    
+            }
+
             $(document).ready(function(){
                 $('#zoomer').prev('div').hide()
                 setTimeout(function(){$('#zoomer').next().hide()},2000)
                 $('#tourismYear').change(function(){
                     let val = $('#tourismYear').val()
                     thisYear = val
-                    let url = '/static/config/heatPoint/heatPoint'+val+'.json'
                     $.ajax({
                         type:"GET",
-                        url: url,
+                        url: '/static/config/heatPoint/heatPoint'+val+'.json',
                         data: null,
                         dataType:'json',
                         cache:false,
@@ -800,7 +707,31 @@
                             console.log(ret)
                         }
                     })
+                    $.ajax({
+                        type:"GET",
+                        url: url = '/static/config/heatMap/heatMap'+val+'.json',
+                        data: null,
+                        dataType:'json',
+                        cache:false,
+                        success: function(ret) {
+                            data = ret
+                            refreshMapData(data)
+                        },
+                        error: function(ret) {
+                            console.log(ret)
+                        }
+                    }) 
+                })
             })
+            $('.switchMap').click(function(){
+                let target = $(this).attr('data')
+                if(target == 'heatPoint'){
+                    $('#heatMap').slideUp(121)
+                    $('#heatPoint').fadeIn(223)
+                }else{
+                    $('#heatPoint').slideUp(121)
+                    $('#heatMap').fadeIn(223)
+                }
             })
     </script>
    </body>

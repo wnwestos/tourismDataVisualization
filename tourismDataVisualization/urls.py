@@ -22,5 +22,6 @@ urlpatterns = [
     path('track/', views.TrackView.as_view(), name='track'),
     path('heatmap/',views.HeatMapView.as_view(), name='heatmap'),
     path('characteristic/',views.CharacteristicView.as_view(), name='characteristic'),
+    path('trend/',views.TrendView.as_view(), name='trend'),
     path('go/', include('base.urls')),
 ]

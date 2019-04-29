@@ -53,7 +53,6 @@ class LoginView(View):
                 return JsonResponse({'code': -1,'err':'用户名或密码不匹配！'})
 
 class LogoutManager(View):
-    @method_decorator(login_required)
     def get(self, request):
-        del request.session['username']
+        request.session['username'] = None
         return redirect('/go/login/')

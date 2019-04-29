@@ -23,3 +23,8 @@ class CharacteristicView(View):
     @method_decorator(login_required)
     def get(self, request):
         return render(request, 'characteristic.html')
+
+class TrendView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'trend.html')
