@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-{% load static %}
 <html style="height: 100%">
    <head>
-    <link rel="icon" href="{% static 'images/favicon.ico' %}">
-    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <meta charset="utf-8">
     <style>
     #userDropList li{
@@ -54,7 +53,7 @@
                             </a>
                             <ul class="dropdown-menu" id="userDropList"  style="min-width: 115px;">
                                     <li><a href="#setting"> Setting</a></li>
-                                    <li><a href="{% url 'login' %}"> Logout</a></li>
+                                    <li><a href="#"> Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -70,18 +69,18 @@
        <div id="transportation" style="height: 100%;margin-top: 10px;"></div>
        <hr style="background: #64c5b8;height: 1px;"/>
        <div id="accormodation" style="height: 100%;margin-top: 10px;"></div>
-       <script type="text/javascript" src="{% static 'map/echarts.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'map/echarts-gl.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'map/ecStat.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'map/dataTool.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'map/china.js' %}"></script>
+       <script type="text/javascript" src="map/echarts.min.js"></script>
+       <script type="text/javascript" src="map/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="map/ecStat.min.js"></script>
+       <script type="text/javascript" src="map/dataTool.min.js"></script>
+       <script type="text/javascript" src="map/china.js"></script>
        <!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>-->
        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=fwoA5IeXIq79fMXhFbG2p77F9hoUL5Gc"></script>
-       <script type="text/javascript" src="{% static 'map/bmap.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'map/simplex.js' %}"></script>
-       <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-       <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
-      <script type="text/javascript">
+       <script type="text/javascript" src="map/bmap.min.js"></script>
+       <script type="text/javascript" src="map/simplex.js"></script>
+       <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+       <script src="bootstrap-3.3.7-dist/js/bootstrap.j"></script>
+       <script type="text/javascript">
        (function() {
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
@@ -873,6 +872,5 @@
         }
     })();
                </script>
-   </body>
    </body>
 </html>
